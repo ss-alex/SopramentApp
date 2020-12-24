@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9622BB82592E2FB007C933F /* MaterialPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9622BB72592E2FB007C933F /* MaterialPopupView.swift */; };
+		D97770672594353D00896525 /* MaterialButtonViewA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97770662594353D00896525 /* MaterialButtonViewA.swift */; };
+		D977706A2594354E00896525 /* MaterialButtonViewB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97770692594354E00896525 /* MaterialButtonViewB.swift */; };
+		D977706D2594356200896525 /* MaterialButtonViewC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D977706C2594356200896525 /* MaterialButtonViewC.swift */; };
 		D991F6AC258C480800E5AB45 /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991F6AB258C480800E5AB45 /* MaterialButton.swift */; };
 		D99A8BC0258DD65700A9BA07 /* BlockOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99A8BBF258DD65700A9BA07 /* BlockOneView.swift */; };
 		D99A8BC4259052DB00A9BA07 /* BlockTwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99A8BC3259052DB00A9BA07 /* BlockTwoView.swift */; };
@@ -21,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D9622BB72592E2FB007C933F /* MaterialPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialPopupView.swift; sourceTree = "<group>"; };
+		D97770662594353D00896525 /* MaterialButtonViewA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButtonViewA.swift; sourceTree = "<group>"; };
+		D97770692594354E00896525 /* MaterialButtonViewB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButtonViewB.swift; sourceTree = "<group>"; };
+		D977706C2594356200896525 /* MaterialButtonViewC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButtonViewC.swift; sourceTree = "<group>"; };
 		D991F6AB258C480800E5AB45 /* MaterialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
 		D99A8BBF258DD65700A9BA07 /* BlockOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockOneView.swift; sourceTree = "<group>"; };
 		D99A8BC3259052DB00A9BA07 /* BlockTwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTwoView.swift; sourceTree = "<group>"; };
@@ -89,6 +97,10 @@
 			children = (
 				D99A8BC72591BB5B00A9BA07 /* RemarksView.swift */,
 				D99A8BCB2591BBB100A9BA07 /* SopramentView.swift */,
+				D9622BB72592E2FB007C933F /* MaterialPopupView.swift */,
+				D97770662594353D00896525 /* MaterialButtonViewA.swift */,
+				D97770692594354E00896525 /* MaterialButtonViewB.swift */,
+				D977706C2594356200896525 /* MaterialButtonViewC.swift */,
 			);
 			path = "Pop-up views";
 			sourceTree = "<group>";
@@ -200,11 +212,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D99A8BC4259052DB00A9BA07 /* BlockTwoView.swift in Sources */,
+				D977706D2594356200896525 /* MaterialButtonViewC.swift in Sources */,
 				D9CB7004258A1F1600EB631F /* ContentView.swift in Sources */,
 				D99A8BCC2591BBB100A9BA07 /* SopramentView.swift in Sources */,
 				D99A8BC0258DD65700A9BA07 /* BlockOneView.swift in Sources */,
 				D9CB7002258A1F1600EB631F /* SopramentAppApp.swift in Sources */,
+				D9622BB82592E2FB007C933F /* MaterialPopupView.swift in Sources */,
+				D97770672594353D00896525 /* MaterialButtonViewA.swift in Sources */,
 				D99A8BD92592112A00A9BA07 /* SopramentButton.swift in Sources */,
+				D977706A2594354E00896525 /* MaterialButtonViewB.swift in Sources */,
 				D99A8BC82591BB5B00A9BA07 /* RemarksView.swift in Sources */,
 				D991F6AC258C480800E5AB45 /* MaterialButton.swift in Sources */,
 				D99A8BD3259210DD00A9BA07 /* RemarksButton.swift in Sources */,
