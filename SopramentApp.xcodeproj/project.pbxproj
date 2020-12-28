@@ -55,6 +55,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D977706F2594665E00896525 /* 12 Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				D97770662594353D00896525 /* MaterialButtonViewA.swift */,
+				D97770692594354E00896525 /* MaterialButtonViewB.swift */,
+				D977706C2594356200896525 /* MaterialButtonViewC.swift */,
+			);
+			path = "12 Buttons";
+			sourceTree = "<group>";
+		};
 		D991F6AE258C63F300E5AB45 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,12 +105,10 @@
 		D99A8BCF2591BBCD00A9BA07 /* Pop-up views */ = {
 			isa = PBXGroup;
 			children = (
+				D9622BB72592E2FB007C933F /* MaterialPopupView.swift */,
 				D99A8BC72591BB5B00A9BA07 /* RemarksView.swift */,
 				D99A8BCB2591BBB100A9BA07 /* SopramentView.swift */,
-				D9622BB72592E2FB007C933F /* MaterialPopupView.swift */,
-				D97770662594353D00896525 /* MaterialButtonViewA.swift */,
-				D97770692594354E00896525 /* MaterialButtonViewB.swift */,
-				D977706C2594356200896525 /* MaterialButtonViewC.swift */,
+				D977706F2594665E00896525 /* 12 Buttons */,
 			);
 			path = "Pop-up views";
 			sourceTree = "<group>";

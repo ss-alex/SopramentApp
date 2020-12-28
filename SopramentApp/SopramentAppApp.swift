@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct SopramentAppApp: App {
+    var settings = SourceOfTruth()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView()
+            ContentView().environmentObject(settings)
         }
     }
 }

@@ -11,9 +11,11 @@ struct ContentView: View {
     
     @State private var isRemarksViewShown = false
     @State private var isSopramentViewShown = false
-    @State private var isMaterialPopupShown = false
+
+    //@StateObject var truth = SourceOfTruth()
+    //@State private var isMaterialPopupShown = false
     
-    @ObservedObject var model = MaterialPopupViewModel()
+    @EnvironmentObject var truth: SourceOfTruth
     
     var body: some View {
         ZStack {
@@ -28,12 +30,10 @@ struct ContentView: View {
                     VStack(spacing: 0) {
                         HStack(spacing: 20) {
                             Button {
-                                isMaterialPopupShown = true
-                                print("MaterialButton was tapped")
-                                print("MaterialButton letter A")
-                                print("isMaterialPopupShown - \(isMaterialPopupShown)")
-                                model.index = 1
-                                
+                                //isMaterialPopupShown = true
+                                //truth.isMaterialShown = isMaterialPopupShown
+                                truth.index = 1
+                                truth.isMaterialShown = true
                             } label: {
                                 Text("A")
                                     .font(.title3)
@@ -45,10 +45,8 @@ struct ContentView: View {
                             }
                             
                             Button {
-                                print("MaterialButton was tapped")
-                                print("MaterialButton letter B")
-                                isMaterialPopupShown = true
-                                model.index = 2
+                                truth.index = 2
+                                truth.isMaterialShown = true
                             } label: {
                                 Text("B")
                                     .font(.title3)
@@ -60,11 +58,8 @@ struct ContentView: View {
                             }
                             
                             Button {
-                                print("MaterialButton was tapped")
-                                print("MaterialButton letter C")
-                                isMaterialPopupShown = true
-                                //materialButtonIndex = 3
-                                //print("materialButtonIndex - \(materialButtonIndex)")
+                                truth.index = 3
+                                truth.isMaterialShown = true
                             } label: {
                                 Text("C")
                                     .font(.title3)
@@ -75,13 +70,7 @@ struct ContentView: View {
                                     .cornerRadius(8)
                             }
                             
-                            Button {
-                                print("MaterialButton was tapped")
-                                print("MaterialButton letter D")
-                                isMaterialPopupShown = true
-                                //materialButtonIndex = 4
-                                //print("materialButtonIndex - \(materialButtonIndex)")
-                            } label: {
+                            Button {} label: {
                                 Text("D")
                                     .font(.title3)
                                     .fontWeight(.regular)
@@ -126,8 +115,11 @@ struct ContentView: View {
                 SopramentView(isSopramentViewShown: $isSopramentViewShown)
             }
             
-            if $isMaterialPopupShown.wrappedValue {
-                MaterialPopupView(isMaterialPopupShown: $isMaterialPopupShown, materialViewModel: model)
+            
+            ///как сделать так, чтобы отсматривалось изменение в stateobject и popupView пропадал бы
+            
+            if truth.isMaterialShown {
+                MaterialPopupView()
             }
         }
     }
@@ -194,4 +186,18 @@ case 12: print("ContentView. buttonIndex = 12")
     print("ContentView. buttonIndex = 1")
 } else {
     print("ContentView. buttonIndex = 12")
+}*/
+
+
+/*if $isMaterialPopupShown.wrappedValue {
+    MaterialPopupView(isMaterialPopupShown: $isMaterialPopupShown, materialViewModel: model)
+}*/
+
+/*if $isMaterialPopupShown.wrappedValue {
+    MaterialPopupView(isMaterialPopupShown: $isMaterialPopupShown, index: index, materialViewModel: model)
+}*/
+
+
+/*if $isMaterialPopupShown.wrappedValue {
+    MaterialPopupView(materialViewModel: model)
 }*/
