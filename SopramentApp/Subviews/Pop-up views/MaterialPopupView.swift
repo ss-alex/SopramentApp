@@ -8,18 +8,10 @@
 import SwiftUI
 
 struct MaterialPopupView: View {
-    //@Binding var isMaterialPopupShown: Bool
-    //@ObservedObject var model: MaterialViewModel
-    
-    //@EnvironmentObject var truth: SourceOfTruth
-    
-    //@StateObject var truth = SourceOfTruth()
-    
     @EnvironmentObject var truth: SourceOfTruth
     
     var body: some View {
         ZStack {
-            Text("AAA")
             truth.makeView()
         }
     }
@@ -31,9 +23,38 @@ class SourceOfTruth: ObservableObject {
     
     @Published var index: Int = 0
     
+    @Published var isMaterialPictureShown = false
+    
+    @Published var imageName: String = ""
+    
+    func setPicture() -> Image {
+        switch imageName {
+        case "iv_d1":
+            print("SourceOfTruth. setPicture(). iv_d1")
+            //return Image("pdficon2")
+            return Image(systemName: "scribble")
+        case "iv_d2":
+            print("SourceOfTruth. setPicture(). iv_d2")
+            return Image("iv_d1")
+        case "iv_d3":
+            print("SourceOfTruth. setPicture(). iv_d3")
+            return Image("iv_d1")
+        case "iv_d4":
+            print("SourceOfTruth. setPicture(). iv_d4")
+            return Image("iv_d1")
+        case "iv_d5":
+            print("SourceOfTruth. setPicture(). iv_d5")
+            return Image("iv_d1")
+        case "iv_d6":
+            print("SourceOfTruth. setPicture(). iv_d6")
+            return Image("iv_d1")
+        default:
+            print("SourceOfTruth. setPicture(). dedault value = empty string")
+            return Image(systemName: "pencil")
+        }
+    }
+    
     func makeView() -> AnyView {
-        
-        /*let binding = Binding(get: {[weak self] in self?.isMaterialShown ?? false}, set: {[weak self] in self?.isMaterialShown = $0})*/
         
         switch index {
         case 1:
@@ -194,3 +215,13 @@ case 12:
     return AnyView(MaterialButtonViewA().environmentObject(self))*/
  
  */
+
+
+//@Binding var isMaterialPopupShown: Bool
+//@ObservedObject var model: MaterialViewModel
+
+//@EnvironmentObject var truth: SourceOfTruth
+
+//@StateObject var truth = SourceOfTruth()
+
+/*let binding = Binding(get: {[weak self] in self?.isMaterialShown ?? false}, set: {[weak self] in self?.isMaterialShown = $0})*/

@@ -59,12 +59,20 @@ struct HStackCalculatedBlock: View {
 }
 
 struct BlockTwoVStackOne: View {
+    @EnvironmentObject var truth: SourceOfTruth
+    
     var body: some View {
+        
         VStack {
             Spacer()
                 .frame(width: 100, height: 40)
                 .background(Color(.green))
-            Image(systemName: "scribble")
+            /*Image("\(truth.imageName)")
+                .frame(width: 100, height: 160)
+                .background(Color(.gray))*/
+            truth.setPicture()
+                //.frame(width: 100, height: 160)
+                .aspectRatio(contentMode: .fill)
                 .frame(width: 100, height: 160)
                 .background(Color(.gray))
             Spacer()
