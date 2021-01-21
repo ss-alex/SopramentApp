@@ -21,7 +21,7 @@ struct MaterialRow: View {
     var body: some View {
         Text(material.name)
             .onTapGesture {
-                print("MaterialRow. Material.imageName: \(material.imageName)")
+                print("MaterialRow. Material.imageName = \(material.imageName)")
                 truth.isMaterialButtonViewShown = false
                 truth.isMaterialPictureShown = true
                 truth.imageName = material.imageName
@@ -36,8 +36,7 @@ struct MaterialButtonViewA: View {
     
     let materialOne = Material(name: "- балочный (Б)",
                                imageName: "iv_d1",
-                               materialTableName: "beams_ru"
-                               /*materialTableName: "\(TableNames.beams_ru.rawValue)"*/)
+                               materialTableName: "beams_b_ru")
     let materialTwo = Material(name: "- широкополочный (Ш)",
                                imageName: "iv_d2",
                                materialTableName: "")

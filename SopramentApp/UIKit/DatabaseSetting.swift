@@ -9,13 +9,27 @@ import Foundation
 import SQLite
 import SwiftUI
 
+struct MaterialTableModel {
+    var tableName: Table
+}
 
 class DataModel {
+    var tableNameString: String
+    let currentMaterial: MaterialTableModel
+    var materialTable: Table
     
-    let materials = Table("beams_b_ru")
+    //MARK:- Column names:
     let name = Expression<String>("name")
     
-    
+    init(tableNameString: String) {
+        self.tableNameString = tableNameString
+        print("DataModel. init() tableNameString = \(tableNameString)")
+        
+        self.currentMaterial = MaterialTableModel(
+            tableName: Table("\(tableNameString)"))
+        self.materialTable = currentMaterial.tableName
+    }
+        
     private var db: Connection?
     
     func setupDB() {
@@ -40,11 +54,12 @@ class DataModel {
         }
         
         do {
-            for material in try db!.prepare(materials) {
+            /*for material in try db!.prepare(materials) {
                 print("DataModel.setupDB(). List all materials entities: \(material).")
                 print("DataModel.setupDB(). List of materials names: \(material[name])")
-                //truth.materialsNamesArray.append(material[name])
-                //print("DataModel.setupDB(). truth.materialsNames after append: \(truth.materialsNamesArray)")
+             }*/
+            for material in try db!.prepare(materialTable) {
+                print("DataModel.setupDB(). List all materials entities: \(material).")
             }
         } catch {
             print("DataModel.setupDB(). Couldn't connect to a db and fetch results.")
@@ -103,6 +118,4 @@ class DataModel {
     let kg = Expression<String>("kg")
     let mt = Expression<String>("mt")
     let m2 = Expression<String>("m2")
-    
-    
 }*/

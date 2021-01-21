@@ -15,7 +15,7 @@ struct RemarksButton: View {
         Button(action: {
             print("RemarksButton. 'REMARKS' Button was tapped.")
             isRemarksViewShown = true
-            print("showRemarks is equal \(isRemarksViewShown)")
+            print("RemarksButton. isRemarksViewShown = \(isRemarksViewShown)")
         }, label: {
             Text("REMARKS")
         })

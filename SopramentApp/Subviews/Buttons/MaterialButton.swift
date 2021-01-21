@@ -14,8 +14,8 @@ struct MaterialButton: View {
     
     var body: some View {
         Button {
-            print("MaterialButton was tapped")
-            print("MaterialButton letter - \(letter), index - \(index)")
+            print("MaterialButton. The button was tapped.")
+            print("MaterialButton. Button letter - \(letter), index - \(index).")
         } label: {
             Text("\(letter)")
                 .font(.title3)

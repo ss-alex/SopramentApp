@@ -22,6 +22,17 @@ class SourceOfTruth: ObservableObject {
     @Published var isImageTapped = false
     @Published var materialsNamesArray = [String]()
     
+    func setTableName() -> String {
+        switch materialTableName {
+        case "beams_b_ru":
+            print("SourceOfTruth. configureTableName(). beams_b_ru")
+            return "beams_b_ru"
+        default:
+            print("SourceOfTruth. configureTableName(). dedault value = empty string")
+            return "nothing"
+        }
+    }
+    
     func setPicture() -> Image {
         switch imageName {
         case "iv_d1":
@@ -44,51 +55,51 @@ class SourceOfTruth: ObservableObject {
             print("SourceOfTruth. setPicture(). iv_d6.")
             return Image("iv_d1")
         default:
-            print("SourceOfTruth. setPicture(). dedault value = empty string")
-            return Image(systemName: "pencil")
+            print("SourceOfTruth. setPicture(). imageName = nil.")
+            return Image(systemName: "questionmark.circle")
         }
     }
     
     func makeMaterialButtonView() -> AnyView {
         switch index {
         case 1:
-            print("SourceOfTruth.lala")
+            print("SourceOfTruth. makeMaterialButtonView(). A.")
             return AnyView(MaterialButtonViewA().environmentObject(self))
         case 2:
-            print("ContentView. buttonIndex = 2")
+            print("SourceOfTruth. makeMaterialButtonView(). B.")
             return AnyView(MaterialButtonViewB().environmentObject(self))
         case 3:
-            print("ContentView. buttonIndex = 3")
+            print("SourceOfTruth. makeMaterialButtonView(). C.")
             return AnyView(MaterialButtonViewC().environmentObject(self))
         case 4:
-            print("ContentView. buttonIndex = 4")
+            print("SourceOfTruth. makeMaterialButtonView(). D.")
             return AnyView(MaterialButtonViewA().environmentObject(self))
         case 5:
-            print("ContentView. buttonIndex = 5")
+            print("SourceOfTruth. makeMaterialButtonView(). E.")
             return AnyView(MaterialButtonViewA().environmentObject(self))
         case 6:
-            print("ContentView. buttonIndex = 6")
+            print("SourceOfTruth. makeMaterialButtonView(). F.")
             return AnyView(MaterialButtonViewA().environmentObject(self))
         case 7:
-            print("ContentView. buttonIndex = 7")
+            print("SourceOfTruth. makeMaterialButtonView(). G.")
             return AnyView(MaterialButtonViewA().environmentObject(self))
         case 8:
-            print("ContentView. buttonIndex = 8")
+            print("SourceOfTruth. makeMaterialButtonView(). H.")
             return AnyView(MaterialButtonViewA().environmentObject(self))
         case 9:
-            print("ContentView. buttonIndex = 9")
+            print("SourceOfTruth. makeMaterialButtonView(). I.")
             return AnyView(MaterialButtonViewA().environmentObject(self))
         case 10:
-            print("ContentView. buttonIndex = 10")
+            print("SourceOfTruth. makeMaterialButtonView(). J.")
             return AnyView(MaterialButtonViewA().environmentObject(self))
         case 11:
-            print("ContentView. buttonIndex = 11")
+            print("SourceOfTruth. makeMaterialButtonView(). K.")
             return AnyView(MaterialButtonViewA().environmentObject(self))
         case 12:
-            print("ContentView. buttonIndex = 12")
+            print("SourceOfTruth. makeMaterialButtonView(). L.")
             return AnyView(MaterialButtonViewA().environmentObject(self))
         default:
-            print("SourceOfTruth. default value")
+            print("SourceOfTruth. makeMaterialButtonView(). M.")
             return AnyView(MaterialButtonViewA().environmentObject(self))
         }
     }

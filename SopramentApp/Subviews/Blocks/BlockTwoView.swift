@@ -60,34 +60,33 @@ struct HStackCalculatedBlock: View {
 
 struct BlockTwoVStackOne: View {
     @EnvironmentObject var truth: SourceOfTruth
-    
     @State var isImageTapped = false
     
-    let model = DataModel()
+    var model: DataModel
     
-    /*var tap: some Gesture {
-        TapGesture()
-            .onEnded { _ in self.isImageTapped = !self.isImageTapped }
+    var tableString: String
+    /*var tableString: String {
+        return truth.setTableName()
     }*/
     
-    var body: some View {
+    init(tableNameString: String) {
         
-        /*VStack {
-            Spacer()
-                .frame(width: 100, height: 40)
-                .background(Color(.green))
-            truth.setPicture()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 100, height: 160)
-                .background(Color(.gray))
-            Spacer()
-                .frame(width: 100, height: 40)
-                .background(Color(.green))
-        }
-        .onTapGesture {
-            print("BlockTwoVStackOne. MaterialSpecsPopupView")
-            truth.isImageTapped = true
+        //self.tableString = truth.materialTableName
+        //self.model = DataModel(tableNameString: "beams_b_ru")
+        
+        self.tableString = tableNameString
+        self.model = DataModel(tableNameString: tableString)
+        
+        /*switch truth.materialTableName {
+        case "beams_b_ru":
+            self.model = DataModel(tableNameString: "beams_b_ru")
+        default:
+            self.model = DataModel(tableNameString: "beams_b_ru")
         }*/
+        
+    }
+    
+    var body: some View {
         
         ZStack {
             VStack {
@@ -99,7 +98,7 @@ struct BlockTwoVStackOne: View {
                     .frame(width: 100, height: 160)
                     .background(Color(.gray))
                     .onTapGesture {
-                        print("BlockTwoVStackOne. MaterialSpecsPopupView")
+                        print("BlockTwoVStackOne. MaterialSpecsPopupView called on tap gesture.")
                         truth.isImageTapped = true
                         model.setupDB()
                     }
@@ -107,11 +106,6 @@ struct BlockTwoVStackOne: View {
                     .frame(width: 100, height: 40)
                     .background(Color(.green))
             }
-            /*.onTapGesture {
-                print("BlockTwoVStackOne. MaterialSpecsPopupView")
-                truth.isImageTapped = true
-                model.setupDB()
-            }*/
         }
         
         if truth.isImageTapped {
@@ -121,14 +115,14 @@ struct BlockTwoVStackOne: View {
 }
 
 struct BlockTwoHStackCombined: View {
+    
+    @EnvironmentObject var truth: SourceOfTruth
+    
     var body: some View {
         HStack(spacing:30) {
-            BlockTwoVStackOne()
+            BlockTwoVStackOne(tableNameString: truth.materialTableName)
             BlockTwoVStackTwo()
         }
         .frame(width: 380, height: 240)
     }
 }
-
-
-
