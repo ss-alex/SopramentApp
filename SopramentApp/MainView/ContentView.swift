@@ -11,9 +11,6 @@ struct ContentView: View {
     
     @State private var isRemarksViewShown = false
     @State private var isSopramentViewShown = false
-
-    //@StateObject var truth = SourceOfTruth()
-    //@State private var isMaterialPopupShown = false
     
     @EnvironmentObject var truth: SourceOfTruth
     
@@ -30,10 +27,8 @@ struct ContentView: View {
                     VStack(spacing: 0) {
                         HStack(spacing: 20) {
                             Button {
-                                //isMaterialPopupShown = true
-                                //truth.isMaterialShown = isMaterialPopupShown
                                 truth.index = 1
-                                truth.isMaterialShown = true
+                                truth.isMaterialButtonViewShown = true
                             } label: {
                                 Text("A")
                                     .font(.title3)
@@ -46,7 +41,7 @@ struct ContentView: View {
                             
                             Button {
                                 truth.index = 2
-                                truth.isMaterialShown = true
+                                truth.isMaterialButtonViewShown = true
                             } label: {
                                 Text("B")
                                     .font(.title3)
@@ -59,7 +54,7 @@ struct ContentView: View {
                             
                             Button {
                                 truth.index = 3
-                                truth.isMaterialShown = true
+                                truth.isMaterialButtonViewShown = true
                             } label: {
                                 Text("C")
                                     .font(.title3)
@@ -116,9 +111,7 @@ struct ContentView: View {
             }
             
             
-            ///как сделать так, чтобы отсматривалось изменение в stateobject и popupView пропадал бы
-            
-            if truth.isMaterialShown {
+            if truth.isMaterialButtonViewShown {
                 MaterialPopupView()
             }
         }

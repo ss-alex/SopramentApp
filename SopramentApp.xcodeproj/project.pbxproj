@@ -3,11 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D95404C025A7EA130014C4DC /* MaterialItemsPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95404BF25A7EA130014C4DC /* MaterialItemsPopupView.swift */; };
+		D95404C425A7EC380014C4DC /* SourceOfTruth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95404C325A7EC380014C4DC /* SourceOfTruth.swift */; };
+		D95404D225A91F660014C4DC /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = D95404D125A91F660014C4DC /* SQLite */; };
+		D95404D625A9212A0014C4DC /* DatabaseSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95404D525A9212A0014C4DC /* DatabaseSetting.swift */; };
 		D9622BB82592E2FB007C933F /* MaterialPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9622BB72592E2FB007C933F /* MaterialPopupView.swift */; };
+		D971181225AEBAE7006C70B2 /* assortment-V2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D971181125AEBAE7006C70B2 /* assortment-V2.sqlite */; };
 		D97770672594353D00896525 /* MaterialButtonViewA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97770662594353D00896525 /* MaterialButtonViewA.swift */; };
 		D977706A2594354E00896525 /* MaterialButtonViewB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97770692594354E00896525 /* MaterialButtonViewB.swift */; };
 		D977706D2594356200896525 /* MaterialButtonViewC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D977706C2594356200896525 /* MaterialButtonViewC.swift */; };
@@ -25,7 +30,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D95404BF25A7EA130014C4DC /* MaterialItemsPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialItemsPopupView.swift; sourceTree = "<group>"; };
+		D95404C325A7EC380014C4DC /* SourceOfTruth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceOfTruth.swift; sourceTree = "<group>"; };
+		D95404D525A9212A0014C4DC /* DatabaseSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSetting.swift; sourceTree = "<group>"; };
 		D9622BB72592E2FB007C933F /* MaterialPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialPopupView.swift; sourceTree = "<group>"; };
+		D971181125AEBAE7006C70B2 /* assortment-V2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = "assortment-V2.sqlite"; sourceTree = "<group>"; };
 		D97770662594353D00896525 /* MaterialButtonViewA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButtonViewA.swift; sourceTree = "<group>"; };
 		D97770692594354E00896525 /* MaterialButtonViewB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButtonViewB.swift; sourceTree = "<group>"; };
 		D977706C2594356200896525 /* MaterialButtonViewC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButtonViewC.swift; sourceTree = "<group>"; };
@@ -49,26 +58,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D95404D225A91F660014C4DC /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D977706F2594665E00896525 /* 12 Buttons */ = {
+		D95404CF25A880160014C4DC /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				D95404D525A9212A0014C4DC /* DatabaseSetting.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		D97035D225B910440055863D /* NavigationViews */ = {
+			isa = PBXGroup;
+			children = (
+				D99A8BC72591BB5B00A9BA07 /* RemarksView.swift */,
+				D99A8BCB2591BBB100A9BA07 /* SopramentView.swift */,
+			);
+			path = NavigationViews;
+			sourceTree = "<group>";
+		};
+		D977706F2594665E00896525 /* 12 Button Views */ = {
 			isa = PBXGroup;
 			children = (
 				D97770662594353D00896525 /* MaterialButtonViewA.swift */,
 				D97770692594354E00896525 /* MaterialButtonViewB.swift */,
 				D977706C2594356200896525 /* MaterialButtonViewC.swift */,
 			);
-			path = "12 Buttons";
+			path = "12 Button Views";
 			sourceTree = "<group>";
 		};
 		D991F6AE258C63F300E5AB45 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
 				D9CB7003258A1F1600EB631F /* ContentView.swift */,
+				D95404C325A7EC380014C4DC /* SourceOfTruth.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -76,9 +104,11 @@
 		D991F6AF258C642D00E5AB45 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				D99A8BCF2591BBCD00A9BA07 /* Pop-up views */,
+				D97035D225B910440055863D /* NavigationViews */,
 				D99A8BCA2591BB7E00A9BA07 /* Blocks */,
 				D991F6B0258C644300E5AB45 /* Buttons */,
+				D977706F2594665E00896525 /* 12 Button Views */,
+				D99A8BCF2591BBCD00A9BA07 /* Pop-up views */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -106,9 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				D9622BB72592E2FB007C933F /* MaterialPopupView.swift */,
-				D99A8BC72591BB5B00A9BA07 /* RemarksView.swift */,
-				D99A8BCB2591BBB100A9BA07 /* SopramentView.swift */,
-				D977706F2594665E00896525 /* 12 Buttons */,
+				D95404BF25A7EA130014C4DC /* MaterialItemsPopupView.swift */,
 			);
 			path = "Pop-up views";
 			sourceTree = "<group>";
@@ -132,11 +160,13 @@
 		D9CB7000258A1F1600EB631F /* SopramentApp */ = {
 			isa = PBXGroup;
 			children = (
+				D95404CF25A880160014C4DC /* UIKit */,
 				D991F6AE258C63F300E5AB45 /* MainView */,
 				D991F6AF258C642D00E5AB45 /* Subviews */,
 				D9CB7001258A1F1600EB631F /* SopramentAppApp.swift */,
 				D9CB7005258A1F1B00EB631F /* Assets.xcassets */,
 				D9CB700A258A1F1B00EB631F /* Info.plist */,
+				D971181125AEBAE7006C70B2 /* assortment-V2.sqlite */,
 				D9CB7007258A1F1B00EB631F /* Preview Content */,
 			);
 			path = SopramentApp;
@@ -166,6 +196,9 @@
 			dependencies = (
 			);
 			name = SopramentApp;
+			packageProductDependencies = (
+				D95404D125A91F660014C4DC /* SQLite */,
+			);
 			productName = SopramentApp;
 			productReference = D9CB6FFE258A1F1600EB631F /* SopramentApp.app */;
 			productType = "com.apple.product-type.application";
@@ -193,6 +226,9 @@
 				Base,
 			);
 			mainGroup = D9CB6FF5258A1F1600EB631F;
+			packageReferences = (
+				D95404D025A91F660014C4DC /* XCRemoteSwiftPackageReference "SQLite" */,
+			);
 			productRefGroup = D9CB6FFF258A1F1600EB631F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -209,6 +245,7 @@
 			files = (
 				D9CB7009258A1F1B00EB631F /* Preview Assets.xcassets in Resources */,
 				D9CB7006258A1F1B00EB631F /* Assets.xcassets in Resources */,
+				D971181225AEBAE7006C70B2 /* assortment-V2.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +257,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D99A8BC4259052DB00A9BA07 /* BlockTwoView.swift in Sources */,
+				D95404C025A7EA130014C4DC /* MaterialItemsPopupView.swift in Sources */,
 				D977706D2594356200896525 /* MaterialButtonViewC.swift in Sources */,
+				D95404D625A9212A0014C4DC /* DatabaseSetting.swift in Sources */,
 				D9CB7004258A1F1600EB631F /* ContentView.swift in Sources */,
 				D99A8BCC2591BBB100A9BA07 /* SopramentView.swift in Sources */,
 				D99A8BC0258DD65700A9BA07 /* BlockOneView.swift in Sources */,
@@ -229,6 +268,7 @@
 				D97770672594353D00896525 /* MaterialButtonViewA.swift in Sources */,
 				D99A8BD92592112A00A9BA07 /* SopramentButton.swift in Sources */,
 				D977706A2594354E00896525 /* MaterialButtonViewB.swift in Sources */,
+				D95404C425A7EC380014C4DC /* SourceOfTruth.swift in Sources */,
 				D99A8BC82591BB5B00A9BA07 /* RemarksView.swift in Sources */,
 				D991F6AC258C480800E5AB45 /* MaterialButton.swift in Sources */,
 				D99A8BD3259210DD00A9BA07 /* RemarksButton.swift in Sources */,
@@ -420,6 +460,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D95404D025A91F660014C4DC /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.12.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D95404D125A91F660014C4DC /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D95404D025A91F660014C4DC /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D9CB6FF6258A1F1600EB631F /* Project object */;
 }

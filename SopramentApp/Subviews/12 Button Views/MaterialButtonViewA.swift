@@ -2,7 +2,7 @@
 //  MaterialButtonViewA.swift
 //  SopramentApp
 //
-//  Created by Лена Мырленко on 2020/12/24.
+//  Created by Alexey Kirpichnikov on 2020/12/24.
 //
 
 import SwiftUI
@@ -11,6 +11,7 @@ struct Material: Identifiable {
     var id = UUID()
     var name: String
     var imageName: String
+    var materialTableName: String
 }
 
 struct MaterialRow: View {
@@ -20,10 +21,11 @@ struct MaterialRow: View {
     var body: some View {
         Text(material.name)
             .onTapGesture {
-                print("\(material.imageName)")
-                truth.isMaterialShown = false
+                print("MaterialRow. Material.imageName: \(material.imageName)")
+                truth.isMaterialButtonViewShown = false
                 truth.isMaterialPictureShown = true
                 truth.imageName = material.imageName
+                truth.materialTableName = material.materialTableName /// передает имя табл
             }
     }
 }
@@ -33,27 +35,34 @@ struct MaterialButtonViewA: View {
     @EnvironmentObject var truth: SourceOfTruth
     
     let materialOne = Material(name: "- балочный (Б)",
-                               imageName: "iv_d1")
+                               imageName: "iv_d1",
+                               materialTableName: "beams_ru"
+                               /*materialTableName: "\(TableNames.beams_ru.rawValue)"*/)
     let materialTwo = Material(name: "- широкополочный (Ш)",
-                               imageName: "iv_d2")
+                               imageName: "iv_d2",
+                               materialTableName: "")
     let materialThree = Material(name: "- колонный (К)",
-                                 imageName: "iv_d3")
+                                 imageName: "iv_d3",
+                                 materialTableName: "")
     let materialFour = Material(name: "- доп. балочный (ДБ)",
-                                imageName: "iv_d4")
+                                imageName: "iv_d4",
+                                materialTableName: "")
     let materialFive = Material(name: "- доп. колонный (ДК)",
-                                imageName: "iv_d3")
+                                imageName: "iv_d3",
+                                materialTableName: "")
     let materialSix = Material(name: "- свайный (С)",
-                               imageName: "iv_d5")
+                               imageName: "iv_d5",
+                               materialTableName: "")
     let materialSeven = Material(name: "- балочный (БТ)",
-                                 imageName: "iv_d6")
+                                 imageName: "iv_d6",
+                                 materialTableName: "")
     let materialEight = Material(name: "- широкополочный (ШТ)",
-                                 imageName: "iv_d6")
+                                 imageName: "iv_d6",
+                                 materialTableName: "")
     let materialNine = Material(name: "- колонный (КТ)",
-                                imageName: "iv_d6")
+                                imageName: "iv_d6",
+                                materialTableName: "")
     
-    func handleTap(_ forMaterial: Material) {
-        
-    }
     
     var body: some View {
         
@@ -78,7 +87,7 @@ struct MaterialButtonViewA: View {
                 }
                 
                 Button {
-                    truth.isMaterialShown = false
+                    truth.isMaterialButtonViewShown = false
                     print("MaterialButtonViewA. Ok button was tapped.")
                     
                 } label: {
@@ -135,3 +144,7 @@ private let tBarRu = ["- балочный (БТ)",
 //        truth.isMaterialShown = false
 //        truth.isMaterialPictureShown = true
 //    }
+
+/*func handleTap(_ forMaterial: Material) {
+    
+}*/

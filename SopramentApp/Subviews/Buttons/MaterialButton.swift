@@ -25,7 +25,6 @@ struct MaterialButton: View {
                 .background(Color.gray)
                 .cornerRadius(8)
         }
-
     }
 }
 

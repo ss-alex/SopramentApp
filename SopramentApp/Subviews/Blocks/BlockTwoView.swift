@@ -61,23 +61,61 @@ struct HStackCalculatedBlock: View {
 struct BlockTwoVStackOne: View {
     @EnvironmentObject var truth: SourceOfTruth
     
+    @State var isImageTapped = false
+    
+    let model = DataModel()
+    
+    /*var tap: some Gesture {
+        TapGesture()
+            .onEnded { _ in self.isImageTapped = !self.isImageTapped }
+    }*/
+    
     var body: some View {
         
-        VStack {
+        /*VStack {
             Spacer()
                 .frame(width: 100, height: 40)
                 .background(Color(.green))
-            /*Image("\(truth.imageName)")
-                .frame(width: 100, height: 160)
-                .background(Color(.gray))*/
             truth.setPicture()
-                //.frame(width: 100, height: 160)
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 100, height: 160)
                 .background(Color(.gray))
             Spacer()
                 .frame(width: 100, height: 40)
                 .background(Color(.green))
+        }
+        .onTapGesture {
+            print("BlockTwoVStackOne. MaterialSpecsPopupView")
+            truth.isImageTapped = true
+        }*/
+        
+        ZStack {
+            VStack {
+                Spacer()
+                    .frame(width: 100, height: 40)
+                    .background(Color(.green))
+                truth.setPicture()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 100, height: 160)
+                    .background(Color(.gray))
+                    .onTapGesture {
+                        print("BlockTwoVStackOne. MaterialSpecsPopupView")
+                        truth.isImageTapped = true
+                        model.setupDB()
+                    }
+                Spacer()
+                    .frame(width: 100, height: 40)
+                    .background(Color(.green))
+            }
+            /*.onTapGesture {
+                print("BlockTwoVStackOne. MaterialSpecsPopupView")
+                truth.isImageTapped = true
+                model.setupDB()
+            }*/
+        }
+        
+        if truth.isImageTapped {
+            MaterialItemsPopupView()
         }
     }
 }

@@ -2,7 +2,7 @@
 //  MaterialButtonViewC.swift
 //  SopramentApp
 //
-//  Created by Лена Мырленко on 2020/12/24.
+//  Created by Alexey Kirpichnikov on 2020/12/24.
 //
 
 import SwiftUI
@@ -44,7 +44,7 @@ struct MaterialButtonViewC: View {
                 }
                 
                 Button {
-                    truth.isMaterialShown = false
+                    truth.isMaterialButtonViewShown = false
                     print("MaterialButtonViewC. Ok button was tapped.")
                     
                 } label: {
