@@ -65,25 +65,10 @@ struct BlockTwoVStackOne: View {
     var model: DataModel
     
     var tableString: String
-    /*var tableString: String {
-        return truth.setTableName()
-    }*/
     
     init(tableNameString: String) {
-        
-        //self.tableString = truth.materialTableName
-        //self.model = DataModel(tableNameString: "beams_b_ru")
-        
         self.tableString = tableNameString
         self.model = DataModel(tableNameString: tableString)
-        
-        /*switch truth.materialTableName {
-        case "beams_b_ru":
-            self.model = DataModel(tableNameString: "beams_b_ru")
-        default:
-            self.model = DataModel(tableNameString: "beams_b_ru")
-        }*/
-        
     }
     
     var body: some View {
@@ -101,6 +86,7 @@ struct BlockTwoVStackOne: View {
                         print("BlockTwoVStackOne. MaterialSpecsPopupView called on tap gesture.")
                         truth.isImageTapped = true
                         model.setupDB()
+                        model.listMaterialsName2()
                     }
                 Spacer()
                     .frame(width: 100, height: 40)
@@ -109,7 +95,7 @@ struct BlockTwoVStackOne: View {
         }
         
         if truth.isImageTapped {
-            MaterialItemsPopupView()
+            PopupViewTwo()
         }
     }
 }

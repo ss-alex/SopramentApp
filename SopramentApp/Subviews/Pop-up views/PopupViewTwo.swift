@@ -7,24 +7,11 @@
 
 import SwiftUI
 
-/*struct MaterialSpec: Identifiable {
-    var id = UUID()
-    var name: String
-}
-
-struct MaterialSpecRow: View {
-    var materialSpec: MaterialSpec
-    
-    var body: some View {
-        Text("\(materialSpec.name)")
-    }
-}*/
-
 struct MaterialItem: Hashable {
     let title: String
 }
 
-struct MaterialItemsPopupView: View {
+struct PopupViewTwo: View {
     
     let materialItem = [MaterialItem]()
     

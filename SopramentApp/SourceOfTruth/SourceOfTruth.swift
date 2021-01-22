@@ -18,20 +18,9 @@ class SourceOfTruth: ObservableObject {
     @Published var imageName: String = ""
     @Published var materialTableName: String = ""
     
-    //MARK:- Table in MaterialItemsPopupView.
+    //MARK:- Table in PopupViewTwo.
     @Published var isImageTapped = false
     @Published var materialsNamesArray = [String]()
-    
-    func setTableName() -> String {
-        switch materialTableName {
-        case "beams_b_ru":
-            print("SourceOfTruth. configureTableName(). beams_b_ru")
-            return "beams_b_ru"
-        default:
-            print("SourceOfTruth. configureTableName(). dedault value = empty string")
-            return "nothing"
-        }
-    }
     
     func setPicture() -> Image {
         switch imageName {

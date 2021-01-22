@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MaterialButtonViewB: View {
-    //@StateObject var truth = SourceOfTruth()
     @EnvironmentObject var truth: SourceOfTruth
     
     private let iBar = ["- joist (J)",

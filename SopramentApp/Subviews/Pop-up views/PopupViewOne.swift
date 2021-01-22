@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MaterialPopupView: View {
+struct PopupViewOne: View {
     @EnvironmentObject var truth: SourceOfTruth
     
     var body: some View {
