@@ -7,21 +7,36 @@
 
 import SwiftUI
 
-struct MaterialItem: Hashable {
-    let title: String
+
+
+struct MaterialItem: Identifiable {
+    var id = UUID()
+    var name: String
+}
+
+struct ItemRow: View {
+    var item: MaterialItem
+    
+    var body: some View {
+        Text(item.name)
+    }
 }
 
 struct PopupViewTwo: View {
     
-    let materialItem = [MaterialItem]()
+    @EnvironmentObject var truth: SourceOfTruth
     
     var body: some View {
+        
+        let itemsArray = truth.itemsNameArray
+        
         ZStack {
             VStack {
                 List {
-                    Text("10 Б1 100*55")
-                    Text("12 Б1 118*64")
-                    Text("12 Б2 120*64")
+                    
+                    ForEach(itemsArray) { item in 
+                        ItemRow(item: item)
+                    }
                 }
             }
         }
@@ -30,3 +45,9 @@ struct PopupViewTwo: View {
     }
 }
 
+//var materialItem = [MaterialItem]()
+//private let model: DataModel
+
+//init(model: DataModel) {
+//    self.model = model
+//}

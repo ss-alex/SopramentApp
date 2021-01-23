@@ -13,11 +13,6 @@ struct MaterialCategoryModel {
     var tableName: Table
 }
 
-struct MaterialModel {
-    let name: String
-    init(name: String) { self.name = name }
-}
-
 class DataModel {
     private var db: Connection?
     
@@ -25,15 +20,14 @@ class DataModel {
     let name = Expression<String>("name")
     
     //MARK:- Properties:
-    var tableNameString: String
+    let tableNameString: String
     let materialCategory: MaterialCategoryModel
-    var materialTable: Table
+    let materialTable: Table
     
-    var namesArray = [String]()
+    //var namesArray = [String]()
     
     init(tableNameString: String) {
         self.tableNameString = tableNameString
-        print("DataModel. init() tableNameString = \(tableNameString)")
         self.materialCategory = MaterialCategoryModel(tableName: Table("\(tableNameString)"))
         self.materialTable = materialCategory.tableName
     }
@@ -62,28 +56,24 @@ class DataModel {
 
 extension DataModel {
     
-    func listMaterialsName() {
+    func listItemsName() -> [MaterialItem]  {
+        
+        //namesArray = []
+                
         do {
-            for material in try db!.prepare(materialTable) {
-                print("DataModel.setupDB(). List all materials entities: \(material).")
-                //print("DataModel.setupDB(). List of materials names: \(material[name])")
-            }
-        } catch {
-            print("DataModel.setupDB(). Couldn't connect to a db and fetch results.")
-        }
-    }
-    
-    func listMaterialsName2()  {
-        do {
-            for material in try db!.prepare(materialTable) {
+            /*for material in try db!.prepare(materialTable) {
                 namesArray.append(material[name])
             }
+            print("DataModel. listMaterialsName(). namesArray = \(namesArray).")*/
             
-            print("DataModel. listMaterialsName2(). namesArray = \(namesArray).")
+            return try db!.prepare(materialTable).map { material in
+                return MaterialItem(name: material[name])
+            }
             
         } catch {
             print("DataModel. listMaterialsName2(). Can't list materials name.")
+            return []
         }
+        
     }
-    
 }

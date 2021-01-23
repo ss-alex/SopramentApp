@@ -28,7 +28,7 @@ struct ContentView: View {
                         HStack(spacing: 20) {
                             Button {
                                 truth.index = 1
-                                truth.isMaterialButtonViewShown = true
+                                truth.isPopupViewOneShown = true
                             } label: {
                                 Text("A")
                                     .font(.title3)
@@ -41,7 +41,7 @@ struct ContentView: View {
                             
                             Button {
                                 truth.index = 2
-                                truth.isMaterialButtonViewShown = true
+                                truth.isPopupViewOneShown = true
                             } label: {
                                 Text("B")
                                     .font(.title3)
@@ -54,7 +54,7 @@ struct ContentView: View {
                             
                             Button {
                                 truth.index = 3
-                                truth.isMaterialButtonViewShown = true
+                                truth.isPopupViewOneShown = true
                             } label: {
                                 Text("C")
                                     .font(.title3)
@@ -111,7 +111,7 @@ struct ContentView: View {
             }
             
             
-            if truth.isMaterialButtonViewShown {
+            if truth.isPopupViewOneShown {
                 PopupViewOne()
             }
         }

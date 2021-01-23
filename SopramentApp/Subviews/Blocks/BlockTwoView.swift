@@ -59,12 +59,12 @@ struct HStackCalculatedBlock: View {
 }
 
 struct BlockTwoVStackOne: View {
-    @EnvironmentObject var truth: SourceOfTruth
-    @State var isImageTapped = false
-    
-    var model: DataModel
     
     var tableString: String
+    var model: DataModel
+    @EnvironmentObject var truth: SourceOfTruth
+    
+    @State var isImageTapped = false
     
     init(tableNameString: String) {
         self.tableString = tableNameString
@@ -84,9 +84,15 @@ struct BlockTwoVStackOne: View {
                     .background(Color(.gray))
                     .onTapGesture {
                         print("BlockTwoVStackOne. MaterialSpecsPopupView called on tap gesture.")
+                        
+                        //User logic:
                         truth.isImageTapped = true
                         model.setupDB()
-                        model.listMaterialsName2()
+                        truth.itemsNameArray = model.listItemsName()
+                        print("BlockTwoVStackOne. truth.materialsNameArray = \(truth.itemsNameArray)")
+                        /*truth.materialsNameArray = model.listMaterialsName()
+                        print("BlockTwoVStackOne. truth.materialsNameArray = \(truth.materialsNameArray)")*/
+                        
                     }
                 Spacer()
                     .frame(width: 100, height: 40)

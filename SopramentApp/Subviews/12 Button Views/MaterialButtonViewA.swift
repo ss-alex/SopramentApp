@@ -7,25 +7,27 @@
 
 import SwiftUI
 
-struct Material: Identifiable {
+struct MaterialCategory: Identifiable {
     var id = UUID()
     var name: String
     var imageName: String
-    var materialTableName: String
+    var tableName: String
 }
 
-struct MaterialRow: View {
-    var material: Material
+struct CategoryRow: View {
+    var category: MaterialCategory
     @EnvironmentObject var truth: SourceOfTruth
     
     var body: some View {
-        Text(material.name)
+        Text(category.name)
             .onTapGesture {
-                print("MaterialRow. Material.imageName = \(material.imageName)")
-                truth.isMaterialButtonViewShown = false
+                print("MaterialRow. Material.imageName = \(category.imageName)")
+                
+                //User logic:
+                truth.isPopupViewOneShown = false
                 truth.isMaterialPictureShown = true
-                truth.imageName = material.imageName
-                truth.materialTableName = material.materialTableName /// передает имя табл
+                truth.imageName = category.imageName
+                truth.materialTableName = category.tableName /// передает имя табл
             }
     }
 }
@@ -34,59 +36,59 @@ struct MaterialButtonViewA: View {
     
     @EnvironmentObject var truth: SourceOfTruth
     
-    let materialOne = Material(name: "- балочный (Б)",
+    let categoryOne = MaterialCategory(name: "- балочный (Б)",
                                imageName: "iv_d1",
-                               materialTableName: "beams_b_ru")
-    let materialTwo = Material(name: "- широкополочный (Ш)",
+                               tableName: "beams_b_ru")
+    let categoryTwo = MaterialCategory(name: "- широкополочный (Ш)",
                                imageName: "iv_d2",
-                               materialTableName: "")
-    let materialThree = Material(name: "- колонный (К)",
+                               tableName: "")
+    let categoryThree = MaterialCategory(name: "- колонный (К)",
                                  imageName: "iv_d3",
-                                 materialTableName: "")
-    let materialFour = Material(name: "- доп. балочный (ДБ)",
+                                 tableName: "")
+    let categoryFour = MaterialCategory(name: "- доп. балочный (ДБ)",
                                 imageName: "iv_d4",
-                                materialTableName: "")
-    let materialFive = Material(name: "- доп. колонный (ДК)",
+                                tableName: "")
+    let categoryFive = MaterialCategory(name: "- доп. колонный (ДК)",
                                 imageName: "iv_d3",
-                                materialTableName: "")
-    let materialSix = Material(name: "- свайный (С)",
+                                tableName: "")
+    let categorySix = MaterialCategory(name: "- свайный (С)",
                                imageName: "iv_d5",
-                               materialTableName: "")
-    let materialSeven = Material(name: "- балочный (БТ)",
+                               tableName: "")
+    let categorySeven = MaterialCategory(name: "- балочный (БТ)",
                                  imageName: "iv_d6",
-                                 materialTableName: "")
-    let materialEight = Material(name: "- широкополочный (ШТ)",
+                                 tableName: "")
+    let categoryEight = MaterialCategory(name: "- широкополочный (ШТ)",
                                  imageName: "iv_d6",
-                                 materialTableName: "")
-    let materialNine = Material(name: "- колонный (КТ)",
+                                 tableName: "")
+    let categoryNine = MaterialCategory(name: "- колонный (КТ)",
                                 imageName: "iv_d6",
-                                materialTableName: "")
+                                tableName: "")
     
     
     var body: some View {
         
-        let materialsGroupOne = [materialOne, materialTwo, materialThree, materialFour, materialFive, materialSix]
+        let materialsGroupOne = [categoryOne, categoryTwo, categoryThree, categoryFour, categoryFive, categorySix]
         
-        let materialsGroupTwo = [materialSeven, materialEight, materialNine]
+        let materialsGroupTwo = [categorySeven, categoryEight, categoryNine]
         
         ZStack {
             VStack {
                 List {
                     Section(header: Text("Двутавр")) {
-                        ForEach(materialsGroupOne) { material in
-                            MaterialRow(material: material)
+                        ForEach(materialsGroupOne) { category in
+                            CategoryRow(category: category)
                         }
                     }
                     
                     Section(header: Text("Тавр")) {
                         ForEach(materialsGroupTwo) { material in
-                            MaterialRow(material: material)
+                            CategoryRow(category: material)
                         }
                     }
                 }
                 
                 Button {
-                    truth.isMaterialButtonViewShown = false
+                    truth.isPopupViewOneShown = false
                     print("MaterialButtonViewA. Ok button was tapped.")
                     
                 } label: {

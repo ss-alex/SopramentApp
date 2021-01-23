@@ -9,18 +9,19 @@ import SwiftUI
 
 class SourceOfTruth: ObservableObject {
     
-    //MARK: - Buttons A - M & MaterialButtonViews A - M.
+    //MARK: - Buttons A-L & PopupViewOne:
     @Published var index: Int = 0
-    @Published var isMaterialButtonViewShown = false
+    @Published var isPopupViewOneShown = false
     
-    //MARK: - Picture for the Image in BlockTwoView.
+    //MARK: - Picture for the Image in BlockTwoView:
     @Published var isMaterialPictureShown = false
     @Published var imageName: String = ""
     @Published var materialTableName: String = ""
     
-    //MARK:- Table in PopupViewTwo.
+    //MARK:- Table in PopupViewTwo:
     @Published var isImageTapped = false
-    @Published var materialsNamesArray = [String]()
+    @Published var itemsNameArray = [MaterialItem]()
+    
     
     func setPicture() -> Image {
         switch imageName {

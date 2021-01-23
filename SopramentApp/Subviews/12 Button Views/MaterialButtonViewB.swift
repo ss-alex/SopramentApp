@@ -43,7 +43,7 @@ struct MaterialButtonViewB: View {
                 }
                 
                 Button {
-                    truth.isMaterialButtonViewShown = false
+                    truth.isPopupViewOneShown = false
                     print("MaterialButtonViewB. Ok button was tapped.")
                     
                 } label: {
