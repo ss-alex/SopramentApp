@@ -57,14 +57,7 @@ class DataModel {
 extension DataModel {
     
     func listItemsName() -> [MaterialItem]  {
-        
-        //namesArray = []
-                
         do {
-            /*for material in try db!.prepare(materialTable) {
-                namesArray.append(material[name])
-            }
-            print("DataModel. listMaterialsName(). namesArray = \(namesArray).")*/
             
             return try db!.prepare(materialTable).map { material in
                 return MaterialItem(name: material[name])
@@ -74,6 +67,22 @@ extension DataModel {
             print("DataModel. listMaterialsName2(). Can't list materials name.")
             return []
         }
-        
     }
+    
+}
+
+extension DataModel {
+    
+    func listItemEntities(name: String) -> Row? {
+        do {
+            let query = materialTable.filter(self.name == name)
+            let data = try db?.pluck(query)
+            return data
+            
+        } catch {
+            print("DataModel. listItemEntities(). Error happened = \(error) ")
+            return nil
+        }
+    }
+    
 }

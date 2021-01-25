@@ -12,7 +12,6 @@ struct SopramentAppApp: App {
     var settings = SourceOfTruth()
     var body: some Scene {
         WindowGroup {
-            //ContentView()
             ContentView().environmentObject(settings)
         }
     }

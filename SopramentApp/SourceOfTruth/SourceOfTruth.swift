@@ -21,6 +21,10 @@ class SourceOfTruth: ObservableObject {
     //MARK:- Table in PopupViewTwo:
     @Published var isImageTapped = false
     @Published var itemsNameArray = [MaterialItem]()
+    @Published var itemName: String = ""
+    
+    //MARK:- To populate BlockOneView:
+    @Published var isItemPicked = false
     
     
     func setPicture() -> Image {

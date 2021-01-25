@@ -78,6 +78,7 @@ struct BlockTwoVStackOne: View {
                 Spacer()
                     .frame(width: 100, height: 40)
                     .background(Color(.green))
+                
                 truth.setPicture()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 100, height: 160)
@@ -90,10 +91,8 @@ struct BlockTwoVStackOne: View {
                         model.setupDB()
                         truth.itemsNameArray = model.listItemsName()
                         print("BlockTwoVStackOne. truth.materialsNameArray = \(truth.itemsNameArray)")
-                        /*truth.materialsNameArray = model.listMaterialsName()
-                        print("BlockTwoVStackOne. truth.materialsNameArray = \(truth.materialsNameArray)")*/
-                        
                     }
+                
                 Spacer()
                     .frame(width: 100, height: 40)
                     .background(Color(.green))
@@ -101,7 +100,7 @@ struct BlockTwoVStackOne: View {
         }
         
         if truth.isImageTapped {
-            PopupViewTwo()
+            PopupViewTwo(model: model)
         }
     }
 }
