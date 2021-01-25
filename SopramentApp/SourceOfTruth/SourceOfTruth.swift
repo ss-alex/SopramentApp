@@ -23,9 +23,18 @@ class SourceOfTruth: ObservableObject {
     @Published var itemsNameArray = [MaterialItem]()
     @Published var itemName: String = ""
     
-    //MARK:- To populate BlockOneView:
+    //MARK:- Item entities:
     @Published var isItemPicked = false
-    
+    @Published var name: String = ""
+    @Published var title: String = ""
+    @Published var gost: String = ""
+    @Published var certificate: String = ""
+    @Published var kilo: Double = 0.0
+    @Published var meter: Double = 0.0
+    @Published var label: String = ""
+    @Published var kg: String = ""
+    @Published var mt: String = ""
+    @Published var m2: String = ""
     
     func setPicture() -> Image {
         switch imageName {

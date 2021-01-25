@@ -25,15 +25,16 @@ struct ItemRow: View {
             .onTapGesture {
                 //User logic:
                 truth.isImageTapped = false // to close the PopupViewTwo
-                
                 truth.itemName = item.name
-                print("ItemRow. truth.itemName = \(truth.itemName)")
-                
                 truth.isItemPicked = true
-                print("ItemRow. truth.isItemPicked = \(truth.isItemPicked)")
                 
                 let x = model.listItemEntities(name: truth.itemName)
-                print("ItemRow. model.listItemEntities(). Row items: \(x)")
+                
+                let name = x?[model.name]
+                print("ItemRow. name = \(name)")
+                //truth.name = name!
+                //print("ItemRow. truth.name = \(truth.name)")
+                
             }
     }
 }
