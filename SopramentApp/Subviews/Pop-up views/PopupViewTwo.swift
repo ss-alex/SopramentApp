@@ -8,7 +8,6 @@
 import SwiftUI
 
 
-
 struct MaterialItem: Identifiable {
     var id = UUID()
     var name: String
@@ -23,18 +22,20 @@ struct ItemRow: View {
     var body: some View {
         Text(item.name)
             .onTapGesture {
-                //User logic:
+            
                 truth.isImageTapped = false // to close the PopupViewTwo
                 truth.itemName = item.name
                 truth.isItemPicked = true
+                print("ItemRow. truth.itemName = \(truth.itemName)")
                 
-                let x = model.listItemEntities(name: truth.itemName)
-                
-                let name = x?[model.name]
-                print("ItemRow. name = \(name)")
-                //truth.name = name!
-                //print("ItemRow. truth.name = \(truth.name)")
-                
+                model.setupDB()
+                let x = model.fetchItemRow(name: truth.itemName)
+                print("ItemRow. model.fetchItemRow(). fetched row = \(x)")
+                let y = x?[model.title]
+                print("y = \(y)")
+                truth.itemTitle = y!
+                let z = truth.itemTitle
+                print("z = \(z)")
             }
     }
 }

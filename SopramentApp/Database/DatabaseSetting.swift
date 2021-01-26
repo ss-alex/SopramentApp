@@ -14,6 +14,8 @@ struct MaterialCategoryModel {
 }
 
 class DataModel {
+    //@EnvironmentObject var truth: SourceOfTruth
+    
     private var db: Connection?
     
     //MARK:- Column names:
@@ -32,7 +34,8 @@ class DataModel {
     let tableNameString: String
     let materialCategory: MaterialCategoryModel
     let materialTable: Table
-    var rowData: Row?
+    
+    var itemRow: Row?
     
     init(tableNameString: String) {
         self.tableNameString = tableNameString
@@ -81,7 +84,7 @@ extension DataModel {
 
 extension DataModel {
     
-    func listItemEntities(name: String) -> Row? {
+    func fetchItemRow(name: String) -> Row? {
         do {
             let query = materialTable.filter(self.name == name)
             let data = try db?.pluck(query)
@@ -93,39 +96,42 @@ extension DataModel {
         }
     }
     
-    func listItemEntitesTwo() {
-        rowData = listItemEntities(name: "12Б2ꟷ120х64х4,4x6,3")
-        print("rowData = \(rowData)")
+    func listItemEntites(name: String) {
+        itemRow = fetchItemRow(name: name)
+        print("DataModel. listItemEntites(). itemRow = \(itemRow)")
         
-        let rowDataName = rowData![name]
-        print("name = \(rowDataName)")
+        let itemTitle = itemRow?[title]
+        print("DataModel. listItemEntities(), itemTitle = \(itemTitle)")
+        
+        /*let rowDataName = rowData![name]
+        print("DataModel. name = \(rowDataName)")
         
         let rowDataTitle = rowData![title]
-        print("title = \(rowDataTitle)")
+        print("DataModel. title = \(rowDataTitle)")
         
         let rowDataGost = rowData![gost]
-        print("gost = \(rowDataGost)")
+        print("DataModel. gost = \(rowDataGost)")
         
         let rowDataCertificate = rowData![certificate]
-        print("cartificate = \(rowDataCertificate)")
+        print("DataModel. certificate = \(rowDataCertificate)")
         
         let rowDataKilo = rowData![kilo]
-        print("kilo = \(rowDataKilo)")
+        print("DataModel. kilo = \(rowDataKilo)")
         
         let rowDataMeter = rowData![meter]
-        print("meter = \(rowDataMeter)")
+        print("DataModel. meter = \(rowDataMeter)")
         
         let rowDataLabel = rowData![label]
-        print("label = \(rowDataLabel)")
+        print("DataModel. label = \(rowDataLabel)")
         
         let rowDataKg = rowData![kg]
-        print("kg = \(rowDataKg)")
+        print("DataModel. kg = \(rowDataKg)")
         
         let rowDataMt = rowData![mt]
-        print("mt = \(rowDataMt)")
+        print("DataModel. mt = \(rowDataMt)")
         
         let rowDataM2 = rowData![m2]
-        print("m2 = \(rowDataM2)")
+        print("DataModel. m2 = \(rowDataM2)")*/
     }
     
 }

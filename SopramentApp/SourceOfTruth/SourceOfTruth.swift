@@ -25,21 +25,21 @@ class SourceOfTruth: ObservableObject {
     
     //MARK:- Item entities:
     @Published var isItemPicked = false
-    @Published var name: String = ""
-    @Published var title: String = ""
-    @Published var gost: String = ""
-    @Published var certificate: String = ""
-    @Published var kilo: Double = 0.0
-    @Published var meter: Double = 0.0
-    @Published var label: String = ""
-    @Published var kg: String = ""
-    @Published var mt: String = ""
-    @Published var m2: String = ""
+    //@Published var name: String = ""
+    @Published var itemTitle: String = ""
+    @Published var itemGost: String = ""
+    @Published var itemCertificate: String = ""
+    @Published var itemKilo: Double = 0.0
+    @Published var ItemMeter: Double = 0.0
+    @Published var itemLabel: String = ""
+    @Published var itemKg: String = ""
+    @Published var itemMt: String = ""
+    @Published var itemM2: String = ""
     
     func setPicture() -> Image {
         switch imageName {
         case "iv_d1":
-            print("SourceOfTruth. setPicture(). iv_d1.")
+            print("SourceOfTruth. setPicture(). imageName = \(imageName).")
             //return Image("pdficon2")
             return Image(systemName: "scribble")
         case "iv_d2":
