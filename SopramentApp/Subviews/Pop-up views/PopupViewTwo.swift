@@ -29,13 +29,41 @@ struct ItemRow: View {
                 print("ItemRow. truth.itemName = \(truth.itemName)")
                 
                 model.setupDB()
-                let x = model.fetchItemRow(name: truth.itemName)
-                print("ItemRow. model.fetchItemRow(). fetched row = \(x)")
-                let y = x?[model.title]
-                print("y = \(y)")
-                truth.itemTitle = y!
-                let z = truth.itemTitle
-                print("z = \(z)")
+                
+                let row = model.fetchItemRow(name: truth.itemName)
+                
+                let title2 = row?[model.title]
+                let gost = row?[model.gost]
+                let certificate = row?[model.certificate]
+                let kilo = row?[model.kilo]
+                let meter = row?[model.meter]
+                let label = row?[model.label]
+                let kg = row?[model.kg]
+                let mt = row?[model.mt]
+                let m2 = row?[model.m2]
+                
+                truth.itemTitle = title2!
+                truth.itemGost = gost!
+                truth.itemCertificate = certificate!
+                truth.itemKilo = kilo!
+                truth.itemMeter = meter!
+                truth.itemLabel = label!
+                truth.itemKg = kg!
+                truth.itemMt = mt!
+                truth.itemM2 = m2!
+                
+                //Checking what works, what doesn't:
+                print("ItemRow. model.fetchItemRow(). row = \(row)")
+                print("ItemRow. truth.itemTitle = \(truth.itemTitle)")
+                print("ItemRow. truth.itemGost = \(truth.itemGost)")
+                print("ItemRow. truth.itemCertificate = \(truth.itemCertificate)")
+                print("ItemRow. truth.itemKilo = \(truth.itemKilo)")
+                print("ItemRow. truth.itemMeter = \(truth.itemMeter)")
+                print("ItemRow. truth.itemLabel = \(truth.itemLabel)")
+                print("ItemRow. truth.itemKg = \(truth.itemKg)")
+                print("ItemRow. truth.itemMt = \(truth.itemMt)")
+                print("ItemRow. truth.itemM2 = \(truth.itemM2)")
+                
             }
     }
 }

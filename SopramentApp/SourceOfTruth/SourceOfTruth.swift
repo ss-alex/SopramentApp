@@ -30,7 +30,7 @@ class SourceOfTruth: ObservableObject {
     @Published var itemGost: String = ""
     @Published var itemCertificate: String = ""
     @Published var itemKilo: Double = 0.0
-    @Published var ItemMeter: Double = 0.0
+    @Published var itemMeter: Double = 0.0
     @Published var itemLabel: String = ""
     @Published var itemKg: String = ""
     @Published var itemMt: String = ""
