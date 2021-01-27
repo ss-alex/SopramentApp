@@ -96,7 +96,7 @@ extension DataModel {
         }
     }
     
-    func listItemEntites(name: String) {
+    /*func listItemEntites(name: String) {
         itemRow = fetchItemRow(name: name)
         print("DataModel. listItemEntites(). itemRow = \(itemRow)")
         
@@ -132,6 +132,6 @@ extension DataModel {
         
         let rowDataM2 = rowData![m2]
         print("DataModel. m2 = \(rowDataM2)")*/
-    }
+    }*/
     
 }

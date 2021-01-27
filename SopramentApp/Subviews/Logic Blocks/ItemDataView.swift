@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BlockOneView: View {
+struct ItemDataView: View {
     @EnvironmentObject var truth: SourceOfTruth
     
     var body: some View {

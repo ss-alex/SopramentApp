@@ -35,7 +35,10 @@ class SourceOfTruth: ObservableObject {
     @Published var itemMt: String = ""
     @Published var itemM2: String = ""
     
-     
+    //MARK:- BlockTwoView:
+    @Published var mtFigure: Int = 0
+    @Published var kgFigure: Int = 0
+    @Published var meter2figure: Int = 0
     
     func setPicture() -> Image {
         switch imageName {

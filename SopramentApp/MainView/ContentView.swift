@@ -18,10 +18,10 @@ struct ContentView: View {
         ZStack {
             NavigationView {
                 VStack {
-                    BlockOneView()
+                    ItemDataView()
                     Spacer()
                     
-                    BlockTwoHStackCombined()
+                    ItemCalculatorView()
                     Spacer()
                     
                     VStack(spacing: 0) {

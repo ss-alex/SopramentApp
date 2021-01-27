@@ -17,8 +17,8 @@
 		D977706A2594354E00896525 /* MaterialButtonViewB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97770692594354E00896525 /* MaterialButtonViewB.swift */; };
 		D977706D2594356200896525 /* MaterialButtonViewC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D977706C2594356200896525 /* MaterialButtonViewC.swift */; };
 		D991F6AC258C480800E5AB45 /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991F6AB258C480800E5AB45 /* MaterialButton.swift */; };
-		D99A8BC0258DD65700A9BA07 /* BlockOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99A8BBF258DD65700A9BA07 /* BlockOneView.swift */; };
-		D99A8BC4259052DB00A9BA07 /* BlockTwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99A8BC3259052DB00A9BA07 /* BlockTwoView.swift */; };
+		D99A8BC0258DD65700A9BA07 /* ItemDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99A8BBF258DD65700A9BA07 /* ItemDataView.swift */; };
+		D99A8BC4259052DB00A9BA07 /* ItemCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99A8BC3259052DB00A9BA07 /* ItemCalculatorView.swift */; };
 		D99A8BC82591BB5B00A9BA07 /* RemarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99A8BC72591BB5B00A9BA07 /* RemarksView.swift */; };
 		D99A8BCC2591BBB100A9BA07 /* SopramentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99A8BCB2591BBB100A9BA07 /* SopramentView.swift */; };
 		D99A8BD3259210DD00A9BA07 /* RemarksButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99A8BD2259210DD00A9BA07 /* RemarksButton.swift */; };
@@ -39,8 +39,8 @@
 		D97770692594354E00896525 /* MaterialButtonViewB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButtonViewB.swift; sourceTree = "<group>"; };
 		D977706C2594356200896525 /* MaterialButtonViewC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButtonViewC.swift; sourceTree = "<group>"; };
 		D991F6AB258C480800E5AB45 /* MaterialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
-		D99A8BBF258DD65700A9BA07 /* BlockOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockOneView.swift; sourceTree = "<group>"; };
-		D99A8BC3259052DB00A9BA07 /* BlockTwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTwoView.swift; sourceTree = "<group>"; };
+		D99A8BBF258DD65700A9BA07 /* ItemDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataView.swift; sourceTree = "<group>"; };
+		D99A8BC3259052DB00A9BA07 /* ItemCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCalculatorView.swift; sourceTree = "<group>"; };
 		D99A8BC72591BB5B00A9BA07 /* RemarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarksView.swift; sourceTree = "<group>"; };
 		D99A8BCB2591BBB100A9BA07 /* SopramentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SopramentView.swift; sourceTree = "<group>"; };
 		D99A8BD2259210DD00A9BA07 /* RemarksButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarksButton.swift; sourceTree = "<group>"; };
@@ -81,13 +81,13 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
-		D97035D225B910440055863D /* NavigationViews */ = {
+		D97035D225B910440055863D /* Navigation Views */ = {
 			isa = PBXGroup;
 			children = (
 				D99A8BC72591BB5B00A9BA07 /* RemarksView.swift */,
 				D99A8BCB2591BBB100A9BA07 /* SopramentView.swift */,
 			);
-			path = NavigationViews;
+			path = "Navigation Views";
 			sourceTree = "<group>";
 		};
 		D977706F2594665E00896525 /* 12 Button Views */ = {
@@ -111,8 +111,8 @@
 		D991F6AF258C642D00E5AB45 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				D97035D225B910440055863D /* NavigationViews */,
-				D99A8BCA2591BB7E00A9BA07 /* Blocks */,
+				D97035D225B910440055863D /* Navigation Views */,
+				D99A8BCA2591BB7E00A9BA07 /* Logic Blocks */,
 				D991F6B0258C644300E5AB45 /* Buttons */,
 				D977706F2594665E00896525 /* 12 Button Views */,
 				D99A8BCF2591BBCD00A9BA07 /* Pop-up views */,
@@ -130,13 +130,13 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
-		D99A8BCA2591BB7E00A9BA07 /* Blocks */ = {
+		D99A8BCA2591BB7E00A9BA07 /* Logic Blocks */ = {
 			isa = PBXGroup;
 			children = (
-				D99A8BBF258DD65700A9BA07 /* BlockOneView.swift */,
-				D99A8BC3259052DB00A9BA07 /* BlockTwoView.swift */,
+				D99A8BBF258DD65700A9BA07 /* ItemDataView.swift */,
+				D99A8BC3259052DB00A9BA07 /* ItemCalculatorView.swift */,
 			);
-			path = Blocks;
+			path = "Logic Blocks";
 			sourceTree = "<group>";
 		};
 		D99A8BCF2591BBCD00A9BA07 /* Pop-up views */ = {
@@ -264,13 +264,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D99A8BC4259052DB00A9BA07 /* BlockTwoView.swift in Sources */,
+				D99A8BC4259052DB00A9BA07 /* ItemCalculatorView.swift in Sources */,
 				D95404C025A7EA130014C4DC /* PopupViewTwo.swift in Sources */,
 				D977706D2594356200896525 /* MaterialButtonViewC.swift in Sources */,
 				D95404D625A9212A0014C4DC /* DatabaseSetting.swift in Sources */,
 				D9CB7004258A1F1600EB631F /* ContentView.swift in Sources */,
 				D99A8BCC2591BBB100A9BA07 /* SopramentView.swift in Sources */,
-				D99A8BC0258DD65700A9BA07 /* BlockOneView.swift in Sources */,
+				D99A8BC0258DD65700A9BA07 /* ItemDataView.swift in Sources */,
 				D9CB7002258A1F1600EB631F /* SopramentAppApp.swift in Sources */,
 				D9622BB82592E2FB007C933F /* PopupViewOne.swift in Sources */,
 				D97770672594353D00896525 /* MaterialButtonViewA.swift in Sources */,

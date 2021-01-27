@@ -8,34 +8,42 @@
 import SwiftUI
 
 struct BlockTwoVStackTwo: View {
+    @EnvironmentObject var truth: SourceOfTruth
+    
     var body: some View {
         VStack {
-            HStackInputBlock(firstElement: "mt:",
-                             inputNumber: Int(8552.77))
-            HStackCalculatedBlock(inputNumber: 0,
-                                  calculatedNumber: 0)
-            HStackInputBlock(firstElement: "кг:",
-                             inputNumber: Int(86554))
-            HStackCalculatedBlock(inputNumber: 3456,
-                                  calculatedNumber: 299130624)
-            HStackInputBlock(firstElement: "m2:",
-                             inputNumber: Int(4960.6))
-            HStackCalculatedBlock(inputNumber: 0,
-                                  calculatedNumber: 0)
+            //HStackInputBlock(firstElement: "mt:", inputNumber: Int(8552.77))
+            HStackInputBlock(firstElement: truth.isItemPicked ? "\(truth.itemMt)" : "",
+                             inputNumber: truth.isItemPicked ? "\(truth.mtFigure)" : "")
+            
+            HStackCalculatedBlock(inputNumber: 888,
+                                  calculatedNumber: 888)
+            
+            HStackInputBlock(firstElement: truth.isItemPicked ? "\(truth.itemKg)" : "",
+                             inputNumber: truth.isItemPicked ? "\(truth.kgFigure)" : "")
+            
+            HStackCalculatedBlock(inputNumber: 888,
+                                  calculatedNumber: 888)
+            
+            HStackInputBlock(firstElement: truth.isItemPicked ? "\(truth.itemMeter2)" : "",
+                             inputNumber: truth.isItemPicked ? "\(truth.meter2figure)" : "")
+            
+            HStackCalculatedBlock(inputNumber: 888,
+                                  calculatedNumber: 888)
         }
     }
 }
 
 struct HStackInputBlock: View {
     var firstElement: String
-    var inputNumber: Int
+    var inputNumber: String
     
     var body: some View {
         HStack(spacing: 0) {
             Text(firstElement)
                 .frame(width: 80, height: 40, alignment: .leading)
                 .background(Color(.orange))
-            Text("\(inputNumber)")
+            Text(inputNumber)
                 .frame(width: 200, height: 40, alignment: .center)
                 .background(Color(.blue))
         }
@@ -105,8 +113,7 @@ struct BlockTwoVStackOne: View {
     }
 }
 
-struct BlockTwoHStackCombined: View {
-    
+struct ItemCalculatorView: View {
     @EnvironmentObject var truth: SourceOfTruth
     
     var body: some View {
