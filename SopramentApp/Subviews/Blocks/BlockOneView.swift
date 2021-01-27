@@ -8,19 +8,25 @@
 import SwiftUI
 
 struct BlockOneView: View {
+    @EnvironmentObject var truth: SourceOfTruth
+    
     var body: some View {
         VStack {
-            HStackOne()
-            HStackFour()
+            HStackOne(isItemPicked: truth.isItemPicked, itemName: truth.itemName)
+            HStackFour(isItemPicked: truth.isItemPicked)
         }
     }
 }
 
 struct HStackOne: View {
+    var isItemPicked: Bool
+    var itemName: String
+    
     var body: some View {
         HStack {
             Spacer()
-            Text("Швеллер 20Л")
+            
+            Text(isItemPicked ? "\(itemName)" : "")
                 .frame(width: 240, height: 40)
                 .background(Color.yellow)
         }
@@ -28,17 +34,25 @@ struct HStackOne: View {
 }
 
 struct HStackTwo: View {
+    var isItemPicked: Bool
+    var itemKilo: Double
+    var itemMeter2: Double
+    
     var body: some View {
         HStack {
-            Text("1 мп:")
+            Text(isItemPicked ? "1 мп:" : "")
                 .background(Color.orange)
-            Text("кг:")
+            
+            Text(isItemPicked ? "кг:" : "")
                 .background(Color.green)
-            Text("10.12")
+            
+            Text(isItemPicked ? "\(itemKilo)" : "")
                 .background(Color.orange)
-            Text("m2")
+            
+            Text(isItemPicked ? "m2" : "")
                 .background(Color.green)
-            Text("0.58")
+            
+            Text(isItemPicked ? "\(itemMeter2)" : "")
                 .background(Color.orange)
         }
         .frame(width: 240, height: 40)
@@ -47,12 +61,17 @@ struct HStackTwo: View {
 }
 
 struct HStackThree: View {
+    var isItemPicked: Bool
+    var itemGost: String
+    var itemCertificate: String
+    
     var body: some View {
         HStack {
-            Text("ГОСТ")
+            Text(isItemPicked ? "\(itemGost)" : "")
                 .frame(width: 80, height: 40)
                 .background(Color.orange)
-            Text("8240-97")
+            
+            Text(isItemPicked ? "\(itemCertificate)" : "")
                 .frame(width: 160, height: 40, alignment: .leading)
                 .background(Color.green)
         }
@@ -61,20 +80,30 @@ struct HStackThree: View {
 }
 
 struct VStackOne: View {
+    @EnvironmentObject var truth: SourceOfTruth
+    
     var body: some View {
         VStack {
-            HStackTwo()
-            HStackThree()
+            HStackTwo(isItemPicked: truth.isItemPicked,
+                      itemKilo: truth.itemKilo,
+                      itemMeter2: truth.itemMeter2)
+            
+            HStackThree(isItemPicked: truth.isItemPicked,
+                        itemGost: truth.itemGost,
+                        itemCertificate: truth.itemCertificate)
         }
     }
 }
 
 struct HStackFour: View {
+    var isItemPicked: Bool
+    
     var body: some View {
         HStack {
-            Image(systemName: "heart.fill")
+            Image(systemName: isItemPicked ? "doc.on.doc" : "xmark.bin.circle.fill")
                 .frame(width: 80, height: 80,alignment: .center)
                 .background(Color.pink)
+            
             VStackOne()
         }
     }

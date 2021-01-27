@@ -110,7 +110,6 @@ struct ContentView: View {
                 SopramentView(isSopramentViewShown: $isSopramentViewShown)
             }
             
-            
             if truth.isPopupViewOneShown {
                 PopupViewOne()
             }

@@ -25,16 +25,17 @@ class SourceOfTruth: ObservableObject {
     
     //MARK:- Item entities:
     @Published var isItemPicked = false
-    //@Published var name: String = ""
     @Published var itemTitle: String = ""
     @Published var itemGost: String = ""
     @Published var itemCertificate: String = ""
     @Published var itemKilo: Double = 0.0
-    @Published var itemMeter: Double = 0.0
+    @Published var itemMeter2: Double = 0.0
     @Published var itemLabel: String = ""
     @Published var itemKg: String = ""
     @Published var itemMt: String = ""
     @Published var itemM2: String = ""
+    
+     
     
     func setPicture() -> Image {
         switch imageName {
