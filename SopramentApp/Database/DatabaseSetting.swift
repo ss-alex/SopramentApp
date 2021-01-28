@@ -95,43 +95,4 @@ extension DataModel {
             return nil
         }
     }
-    
-    /*func listItemEntites(name: String) {
-        itemRow = fetchItemRow(name: name)
-        print("DataModel. listItemEntites(). itemRow = \(itemRow)")
-        
-        let itemTitle = itemRow?[title]
-        print("DataModel. listItemEntities(), itemTitle = \(itemTitle)")
-        
-        /*let rowDataName = rowData![name]
-        print("DataModel. name = \(rowDataName)")
-        
-        let rowDataTitle = rowData![title]
-        print("DataModel. title = \(rowDataTitle)")
-        
-        let rowDataGost = rowData![gost]
-        print("DataModel. gost = \(rowDataGost)")
-        
-        let rowDataCertificate = rowData![certificate]
-        print("DataModel. certificate = \(rowDataCertificate)")
-        
-        let rowDataKilo = rowData![kilo]
-        print("DataModel. kilo = \(rowDataKilo)")
-        
-        let rowDataMeter = rowData![meter]
-        print("DataModel. meter = \(rowDataMeter)")
-        
-        let rowDataLabel = rowData![label]
-        print("DataModel. label = \(rowDataLabel)")
-        
-        let rowDataKg = rowData![kg]
-        print("DataModel. kg = \(rowDataKg)")
-        
-        let rowDataMt = rowData![mt]
-        print("DataModel. mt = \(rowDataMt)")
-        
-        let rowDataM2 = rowData![m2]
-        print("DataModel. m2 = \(rowDataM2)")*/
-    }*/
-    
 }

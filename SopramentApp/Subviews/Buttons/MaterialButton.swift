@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct MaterialButton: View {
+    @EnvironmentObject var truth: SourceOfTruth
     
+    var buttonIndex: Int
     var letter: String
-    var index: Int
     
     var body: some View {
         Button {
-            print("MaterialButton. The button was tapped.")
-            print("MaterialButton. Button letter - \(letter), index - \(index).")
+            truth.index = self.buttonIndex
+            truth.isPopupViewOneShown = true
+            print("MaterialButton. The button \(letter) was tapped at truth.index - \(truth.index).")
+            
         } label: {
             Text("\(letter)")
                 .font(.title3)

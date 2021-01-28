@@ -40,6 +40,10 @@ class SourceOfTruth: ObservableObject {
     @Published var kgFigure: Int = 0
     @Published var meter2figure: Int = 0
     
+    //MARK:- CalculatedView:
+    @Published var isCalcualtorPopupShown = false
+    @Published var inputValue: Int = 0
+    
     func setPicture() -> Image {
         switch imageName {
         case "iv_d1":

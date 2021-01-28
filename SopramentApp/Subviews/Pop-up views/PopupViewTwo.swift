@@ -58,7 +58,6 @@ struct ItemRow: View {
 }
 
 struct PopupViewTwo: View {
-    
     @EnvironmentObject var truth: SourceOfTruth
     var model: DataModel
     

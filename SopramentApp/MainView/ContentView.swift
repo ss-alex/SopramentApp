@@ -21,75 +21,32 @@ struct ContentView: View {
                     ItemDataView()
                     Spacer()
                     
-                    ItemCalculatorView()
+                    ItemImagePlusCalculatorView()
                     Spacer()
                     
                     VStack(spacing: 0) {
+                        
                         HStack(spacing: 20) {
-                            Button {
-                                truth.index = 1
-                                truth.isPopupViewOneShown = true
-                            } label: {
-                                Text("A")
-                                    .font(.title3)
-                                    .fontWeight(.regular)
-                                    .frame(width: 40, height: 30)
-                                    .foregroundColor(.black)
-                                    .background(Color.gray)
-                                    .cornerRadius(8)
-                            }
-                            
-                            Button {
-                                truth.index = 2
-                                truth.isPopupViewOneShown = true
-                            } label: {
-                                Text("B")
-                                    .font(.title3)
-                                    .fontWeight(.regular)
-                                    .frame(width: 40, height: 30)
-                                    .foregroundColor(.black)
-                                    .background(Color.gray)
-                                    .cornerRadius(8)
-                            }
-                            
-                            Button {
-                                truth.index = 3
-                                truth.isPopupViewOneShown = true
-                            } label: {
-                                Text("C")
-                                    .font(.title3)
-                                    .fontWeight(.regular)
-                                    .frame(width: 40, height: 30)
-                                    .foregroundColor(.black)
-                                    .background(Color.gray)
-                                    .cornerRadius(8)
-                            }
-                            
-                            Button {} label: {
-                                Text("D")
-                                    .font(.title3)
-                                    .fontWeight(.regular)
-                                    .frame(width: 40, height: 30)
-                                    .foregroundColor(.black)
-                                    .background(Color.gray)
-                                    .cornerRadius(8)
-                            }
+                            MaterialButton(buttonIndex: 1, letter: "A")
+                            MaterialButton(buttonIndex: 2, letter: "B")
+                            MaterialButton(buttonIndex: 3, letter: "C")
+                            MaterialButton(buttonIndex: 4, letter: "D")
                         }
                         .padding(20)
                         
                         HStack(spacing: 20) {
-                            MaterialButton(letter: "E", index: 5)
-                            MaterialButton(letter: "F", index: 6)
-                            MaterialButton(letter: "G", index: 7)
-                            MaterialButton(letter: "H", index: 8)
+                            MaterialButton(buttonIndex: 5, letter: "E")
+                            MaterialButton(buttonIndex: 6, letter: "F")
+                            MaterialButton(buttonIndex: 7, letter: "G")
+                            MaterialButton(buttonIndex: 8, letter: "H")
                         }
                         .padding(20)
                         
                         HStack(spacing: 20) {
-                            MaterialButton(letter: "I", index: 9)
-                            MaterialButton(letter: "J", index: 10)
-                            MaterialButton(letter: "K", index: 11)
-                            MaterialButton(letter: "L", index: 12)
+                            MaterialButton(buttonIndex: 9, letter: "I")
+                            MaterialButton(buttonIndex: 10, letter: "J")
+                            MaterialButton(buttonIndex: 11, letter: "K")
+                            MaterialButton(buttonIndex: 12, letter: "L")
                         }
                         .padding(20)
                     }
@@ -97,9 +54,12 @@ struct ContentView: View {
                     .padding()
                     
                 }
-                .navigationBarItems(leading: RemarksButton(isRemarksViewShown: $isRemarksViewShown),
-                                    trailing: SopramentButton(isSopramentViewShown: $isSopramentViewShown)
+                .navigationBarItems(leading:
+                                        RemarksButton(isRemarksViewShown: $isRemarksViewShown),
+                                    trailing:
+                                        SopramentButton(isSopramentViewShown: $isSopramentViewShown)
                 )
+                
             }
 
             if $isRemarksViewShown.wrappedValue {
@@ -112,6 +72,10 @@ struct ContentView: View {
             
             if truth.isPopupViewOneShown {
                 PopupViewOne()
+            }
+            
+            if truth.isCalcualtorPopupShown {
+                CalculatorPopupView()
             }
         }
     }

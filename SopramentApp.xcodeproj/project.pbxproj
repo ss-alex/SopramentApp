@@ -18,7 +18,7 @@
 		D977706D2594356200896525 /* MaterialButtonViewC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D977706C2594356200896525 /* MaterialButtonViewC.swift */; };
 		D991F6AC258C480800E5AB45 /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991F6AB258C480800E5AB45 /* MaterialButton.swift */; };
 		D99A8BC0258DD65700A9BA07 /* ItemDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99A8BBF258DD65700A9BA07 /* ItemDataView.swift */; };
-		D99A8BC4259052DB00A9BA07 /* ItemCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99A8BC3259052DB00A9BA07 /* ItemCalculatorView.swift */; };
+		D99A8BC4259052DB00A9BA07 /* ItemImagePlusCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99A8BC3259052DB00A9BA07 /* ItemImagePlusCalculatorView.swift */; };
 		D99A8BC82591BB5B00A9BA07 /* RemarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99A8BC72591BB5B00A9BA07 /* RemarksView.swift */; };
 		D99A8BCC2591BBB100A9BA07 /* SopramentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99A8BCB2591BBB100A9BA07 /* SopramentView.swift */; };
 		D99A8BD3259210DD00A9BA07 /* RemarksButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99A8BD2259210DD00A9BA07 /* RemarksButton.swift */; };
@@ -27,6 +27,7 @@
 		D9CB7004258A1F1600EB631F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CB7003258A1F1600EB631F /* ContentView.swift */; };
 		D9CB7006258A1F1B00EB631F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9CB7005258A1F1B00EB631F /* Assets.xcassets */; };
 		D9CB7009258A1F1B00EB631F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9CB7008258A1F1B00EB631F /* Preview Assets.xcassets */; };
+		D9F89B7225C1ABCC00797CBA /* CalculatorPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F89B7125C1ABCC00797CBA /* CalculatorPopupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +41,7 @@
 		D977706C2594356200896525 /* MaterialButtonViewC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButtonViewC.swift; sourceTree = "<group>"; };
 		D991F6AB258C480800E5AB45 /* MaterialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
 		D99A8BBF258DD65700A9BA07 /* ItemDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataView.swift; sourceTree = "<group>"; };
-		D99A8BC3259052DB00A9BA07 /* ItemCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCalculatorView.swift; sourceTree = "<group>"; };
+		D99A8BC3259052DB00A9BA07 /* ItemImagePlusCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemImagePlusCalculatorView.swift; sourceTree = "<group>"; };
 		D99A8BC72591BB5B00A9BA07 /* RemarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarksView.swift; sourceTree = "<group>"; };
 		D99A8BCB2591BBB100A9BA07 /* SopramentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SopramentView.swift; sourceTree = "<group>"; };
 		D99A8BD2259210DD00A9BA07 /* RemarksButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarksButton.swift; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		D9CB7005258A1F1B00EB631F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9CB7008258A1F1B00EB631F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D9CB700A258A1F1B00EB631F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9F89B7125C1ABCC00797CBA /* CalculatorPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorPopupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				D99A8BBF258DD65700A9BA07 /* ItemDataView.swift */,
-				D99A8BC3259052DB00A9BA07 /* ItemCalculatorView.swift */,
+				D99A8BC3259052DB00A9BA07 /* ItemImagePlusCalculatorView.swift */,
 			);
 			path = "Logic Blocks";
 			sourceTree = "<group>";
@@ -144,6 +146,7 @@
 			children = (
 				D9622BB72592E2FB007C933F /* PopupViewOne.swift */,
 				D95404BF25A7EA130014C4DC /* PopupViewTwo.swift */,
+				D9F89B7125C1ABCC00797CBA /* CalculatorPopupView.swift */,
 			);
 			path = "Pop-up views";
 			sourceTree = "<group>";
@@ -264,7 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D99A8BC4259052DB00A9BA07 /* ItemCalculatorView.swift in Sources */,
+				D99A8BC4259052DB00A9BA07 /* ItemImagePlusCalculatorView.swift in Sources */,
 				D95404C025A7EA130014C4DC /* PopupViewTwo.swift in Sources */,
 				D977706D2594356200896525 /* MaterialButtonViewC.swift in Sources */,
 				D95404D625A9212A0014C4DC /* DatabaseSetting.swift in Sources */,
@@ -277,6 +280,7 @@
 				D99A8BD92592112A00A9BA07 /* SopramentButton.swift in Sources */,
 				D977706A2594354E00896525 /* MaterialButtonViewB.swift in Sources */,
 				D95404C425A7EC380014C4DC /* SourceOfTruth.swift in Sources */,
+				D9F89B7225C1ABCC00797CBA /* CalculatorPopupView.swift in Sources */,
 				D99A8BC82591BB5B00A9BA07 /* RemarksView.swift in Sources */,
 				D991F6AC258C480800E5AB45 /* MaterialButton.swift in Sources */,
 				D99A8BD3259210DD00A9BA07 /* RemarksButton.swift in Sources */,
