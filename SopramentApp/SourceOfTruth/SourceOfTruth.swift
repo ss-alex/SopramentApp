@@ -43,6 +43,8 @@ class SourceOfTruth: ObservableObject {
     //MARK:- CalculatedView:
     @Published var isCalcualtorPopupShown = false
     @Published var inputValue: Int = 0
+    @Published var quantityValue: Double = 0.0
+    @Published var kilogramValue: Double = 0.0
     
     func setPicture() -> Image {
         switch imageName {

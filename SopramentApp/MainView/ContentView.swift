@@ -75,7 +75,7 @@ struct ContentView: View {
             }
             
             if truth.isCalcualtorPopupShown {
-                CalculatorPopupView()
+                CalculatorPopup()
             }
         }
     }
