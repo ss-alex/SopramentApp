@@ -64,9 +64,14 @@ struct CalculatorPopup: View {
                 HStack {
                     
                     Button {
+                        truth.mtValue = 0
+                        truth.kgValue = 0
+                        truth.m2Value = 0
                         truth.quantityValue = value
-                        print("CalculatorPopup. truth.quantityValue = \(truth.quantityValue) ")
-                        truth.isCalcualtorPopupShown.toggle()
+                        print("CalculatorPopup. quantityValue = \(truth.quantityValue)")
+                        
+                        truth.makeCalculation(with: InputType.quantity)
+                        truth.isCalcualtorPopupShown = false
                         
                     } label: {
                         Text("quantity")
@@ -75,9 +80,14 @@ struct CalculatorPopup: View {
                     }
                     
                     Button {
+                        truth.mtValue = 0
+                        truth.kgValue = 0
+                        truth.m2Value = 0
                         truth.kilogramValue = value
-                        print("CalculatorPopup. truth.kilogramValue = \(truth.kilogramValue)")
-                        truth.isCalcualtorPopupShown.toggle()
+                        print("CalculatorPopup. kilogramValue = \(truth.kilogramValue)")
+                        
+                        truth.makeCalculation(with: InputType.kilogram)
+                        truth.isCalcualtorPopupShown = false
                         
                     } label: {
                         Text("kilogram")

@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+enum InputType {
+    case quantity
+    case kilogram
+}
+
 class SourceOfTruth: ObservableObject {
     
     //MARK: - Buttons A-L & PopupViewOne:
@@ -36,15 +41,66 @@ class SourceOfTruth: ObservableObject {
     @Published var itemM2: String = ""
     
     //MARK:- BlockTwoView:
-    @Published var mtFigure: Int = 0
-    @Published var kgFigure: Int = 0
-    @Published var meter2figure: Int = 0
+    @Published var mtValue: Double = 0.0
+    @Published var kgValue: Double = 0.0
+    @Published var m2Value: Double = 0.0
     
     //MARK:- CalculatedView:
     @Published var isCalcualtorPopupShown = false
-    @Published var inputValue: Int = 0
     @Published var quantityValue: Double = 0.0
     @Published var kilogramValue: Double = 0.0
+    @Published var isCalculationInitiated = false
+    @Published var isQuantityValuePassed = false
+    
+    func makeCalculations() {
+        if isCalculationInitiated {
+            if isQuantityValuePassed == true {
+                mtValue = quantityValue
+                kgValue = mtValue * itemKilo
+                m2Value = mtValue * itemMeter2
+                
+                print("SourceOfTruth. isQuantityValuePassed -> true ")
+                print("SourceOfTruth. mtValue = \(mtValue)")
+                print("SourceOfTruth. kgValue = \(kgValue)")
+                print("SourceOfTruth. m2Value = \(m2Value)")
+            } else {
+                kgValue = kilogramValue
+                mtValue = kgValue / itemKilo
+                m2Value = mtValue * itemMeter2
+                
+                print("SourceOfTruth. isQuantityValuePassed -> false ")
+                print("SourceOfTruth. mtValue = \(mtValue)")
+                print("SourceOfTruth. kgValue = \(kgValue)")
+                print("SourceOfTruth. m2Value = \(m2Value)")
+            }
+        }
+    }
+    
+    func makeCalculation(with inputType: InputType) {
+        switch inputType {
+        case .quantity:
+            mtValue = quantityValue
+            kgValue = mtValue * itemKilo
+            m2Value = mtValue * itemMeter2
+            
+            print("SourceOfTruth. InputType.quantity.")
+            print("SourceOfTruth. mtValue = \(mtValue)")
+            print("SourceOfTruth. kgValue = \(kgValue)")
+            print("SourceOfTruth. m2Value = \(m2Value)")
+            
+        case .kilogram:
+            kgValue = kilogramValue
+            mtValue = kgValue / itemKilo
+            m2Value = mtValue * itemMeter2
+            
+            print("SourceOfTruth. InputType.kilogram.")
+            print("SourceOfTruth. mtValue = \(mtValue)")
+            print("SourceOfTruth. kgValue = \(kgValue)")
+            print("SourceOfTruth. m2Value = \(m2Value)")
+        }
+        
+        
+    }
     
     func setPicture() -> Image {
         switch imageName {

@@ -72,26 +72,26 @@ struct CalculatorVStack: View {
     var body: some View {
         VStack {
             CalculatorOutputRow(firstElement: truth.isItemPicked ? "\(truth.itemMt)" : "",
-                             secondElement: truth.isItemPicked ? "\(truth.mtFigure)" : "")
+                             secondElement: truth.isItemPicked ? "\(truth.mtValue)" : "")
             
-            OtherCalculationsOutputRow(inputNumber: 888,
-                                  calculatedNumber: 888)
+            OtherCalculationsOutputRow(inputNumber: 0,
+                                  calculatedNumber: 0)
             
             CalculatorOutputRow(firstElement: truth.isItemPicked ? "\(truth.itemKg)" : "",
-                             secondElement: truth.isItemPicked ? "\(truth.kgFigure)" : "")
+                             secondElement: truth.isItemPicked ? "\(truth.kgValue)" : "")
             
-            OtherCalculationsOutputRow(inputNumber: 888,
-                                  calculatedNumber: 888)
+            OtherCalculationsOutputRow(inputNumber: 0,
+                                  calculatedNumber: 0)
             
             CalculatorOutputRow(firstElement: truth.isItemPicked ? "\(truth.itemMeter2)" : "",
-                             secondElement: truth.isItemPicked ? "\(truth.meter2figure)" : "")
+                             secondElement: truth.isItemPicked ? "\(truth.m2Value)" : "")
             
-            OtherCalculationsOutputRow(inputNumber: 888,
-                                  calculatedNumber: 888)
+            OtherCalculationsOutputRow(inputNumber: 0,
+                                  calculatedNumber: 0)
         }
         .onTapGesture {
             truth.isCalcualtorPopupShown = true
-            print("CalculatorVStack. truth.isCalculatorPopupView = \(truth.isCalcualtorPopupShown)")
+            print("CalculatorVStack. isCalculatorPopupView = \(truth.isCalcualtorPopupShown)")
         }
     }
 }
