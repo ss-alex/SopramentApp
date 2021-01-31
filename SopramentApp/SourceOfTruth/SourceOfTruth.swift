@@ -97,7 +97,6 @@ class SourceOfTruth: ObservableObject {
         switch imageName {
         case "iv_d1":
             print("SourceOfTruth. setPicture(). imageName = \(imageName).")
-            //return Image("pdficon2")
             return Image(systemName: "scribble")
         case "iv_d2":
             print("SourceOfTruth. setPicture(). iv_d2.")
@@ -116,7 +115,8 @@ class SourceOfTruth: ObservableObject {
             return Image("iv_d1")
         default:
             print("SourceOfTruth. setPicture(). imageName = nil.")
-            return Image(systemName: "questionmark.circle")
+            return
+                Image(systemName: "questionmark.circle")
         }
     }
     

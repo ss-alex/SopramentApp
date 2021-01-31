@@ -46,8 +46,6 @@ struct ImageVStack: View {
                     //.background(Color(.gray))
                     .onTapGesture {
                         print("BlockTwoVStackOne. MaterialSpecsPopupView called on tap gesture.")
-                        
-                        //User logic:
                         truth.isImageTapped = true
                         model.setupDB()
                         truth.itemsNameArray = model.listItemsName()
@@ -72,22 +70,22 @@ struct CalculatorVStack: View {
     var body: some View {
         VStack {
             CalculatorOutputRow(firstElement: truth.isItemPicked ? "\(truth.itemMt)" : "",
-                             secondElement: truth.isItemPicked ? "\(truth.mtValue)" : "")
+                                secondElement: truth.isItemPicked ? "\(truth.mtValue.roundedInTwo)" : "")
             
-            PriseOutputRow(inputNumber: truth.isMtInputDone ? "\(truth.priseInputMt)" : "",
-                           calculatedNumber: truth.isMtInputDone ? "\(truth.recalculatedMt)" : "")
+            PriseOutputRow(inputNumber: truth.isMtInputDone ? "\(truth.priseInputMt.roundedInTwo)" : "",
+                           calculatedNumber: truth.isMtInputDone ? "\(truth.recalculatedMt.roundedInTwo)" : "")
             
             CalculatorOutputRow(firstElement: truth.isItemPicked ? "\(truth.itemKg)" : "",
-                             secondElement: truth.isItemPicked ? "\(truth.kgValue)" : "")
+                                secondElement: truth.isItemPicked ? "\(truth.kgValue.roundedInTwo)" : "")
             
-            PriseOutputRow(inputNumber: truth.isKgInputDone ? "\(truth.priseInputKg)" : "",
-                           calculatedNumber: truth.isKgInputDone ? "\(truth.recalculatedKg)" : "")
+            PriseOutputRow(inputNumber: truth.isKgInputDone ? "\(truth.priseInputKg.roundedInTwo)" : "",
+                           calculatedNumber: truth.isKgInputDone ? "\(truth.recalculatedKg.roundedInTwo)" : "")
             
             CalculatorOutputRow(firstElement: truth.isItemPicked ? "\(truth.itemM2)" : "",
-                             secondElement: truth.isItemPicked ? "\(truth.m2Value)" : "")
+                                secondElement: truth.isItemPicked ? "\(truth.m2Value.roundedInTwo)" : "")
             
-            PriseOutputRow(inputNumber: truth.isM2InputDone ? "\(truth.priseInputM2)" : "",
-                           calculatedNumber: truth.isM2InputDone ? "\(truth.recalculatedM2)" : "")
+            PriseOutputRow(inputNumber: truth.isM2InputDone ? "\(truth.priseInputM2.roundedInTwo)" : "",
+                           calculatedNumber: truth.isM2InputDone ? "\(truth.recalculatedM2.roundedInTwo)" : "")
         }
         .onTapGesture {
             truth.isCalcualtorPopupShown = true

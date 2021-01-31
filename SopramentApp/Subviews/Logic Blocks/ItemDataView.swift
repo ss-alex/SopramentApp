@@ -7,13 +7,34 @@
 
 import SwiftUI
 
+/*extension Double {
+    func round(to places: Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
+}*/
+
+extension Double {
+    var roundedInTwo:String {
+        return String(format: "%.2f", self)
+    }
+}
+
 struct ItemDataView: View {
     @EnvironmentObject var truth: SourceOfTruth
     
     var body: some View {
         VStack {
-            HStackOne(isItemPicked: truth.isItemPicked, itemName: truth.itemName)
-            HStackFour(isItemPicked: truth.isItemPicked)
+            HStackOne(isItemPicked: truth.isItemPicked,
+                      itemName: truth.itemName)
+            
+            HStackTwo(isItemPicked: truth.isItemPicked,
+                      itemKilo: truth.itemKilo,
+                      itemMeter2: truth.itemMeter2)
+            
+            HStackThree(isItemPicked: truth.isItemPicked,
+                        itemGost: truth.itemGost,
+                        itemCertificate: truth.itemCertificate)
         }
     }
 }
@@ -24,8 +45,6 @@ struct HStackOne: View {
     
     var body: some View {
         HStack {
-            Spacer()
-            
             Text(isItemPicked ? "\(itemName)" : "")
                 .frame(width: 240, height: 40)
                 //.background(Color.yellow)
@@ -41,19 +60,12 @@ struct HStackTwo: View {
     var body: some View {
         HStack {
             Text(isItemPicked ? "1 мп:" : "")
-                //.background(Color.orange)
-            
             Text(isItemPicked ? "кг:" : "")
-                //.background(Color.green)
-            
-            Text(isItemPicked ? "\(itemKilo)" : "")
-                //.background(Color.orange)
-            
+            Text(isItemPicked ? "\(itemKilo.roundedInTwo)" : "")
+                .foregroundColor(.blue)
             Text(isItemPicked ? "m2" : "")
-                //.background(Color.green)
-            
-            Text(isItemPicked ? "\(itemMeter2)" : "")
-                //.background(Color.orange)
+            Text(isItemPicked ? "\(itemMeter2.roundedInTwo)" : "")
+                .foregroundColor(.blue)
         }
         .frame(width: 240, height: 40)
         //.background(Color.blue)
@@ -66,7 +78,7 @@ struct HStackThree: View {
     var itemCertificate: String
     
     var body: some View {
-        HStack {
+        HStack(spacing: 0) {
             Text(isItemPicked ? "\(itemGost)" : "")
                 .frame(width: 80, height: 40)
                 //.background(Color.orange)
@@ -78,35 +90,4 @@ struct HStackThree: View {
         //.background(Color.gray)
     }
 }
-
-struct VStackOne: View {
-    @EnvironmentObject var truth: SourceOfTruth
-    
-    var body: some View {
-        VStack {
-            HStackTwo(isItemPicked: truth.isItemPicked,
-                      itemKilo: truth.itemKilo,
-                      itemMeter2: truth.itemMeter2)
-            
-            HStackThree(isItemPicked: truth.isItemPicked,
-                        itemGost: truth.itemGost,
-                        itemCertificate: truth.itemCertificate)
-        }
-    }
-}
-
-struct HStackFour: View {
-    var isItemPicked: Bool
-    
-    var body: some View {
-        HStack {
-            Image(systemName: isItemPicked ? "doc.on.doc" : "xmark.bin.circle.fill")
-                .frame(width: 80, height: 80,alignment: .center)
-                //.background(Color.pink)
-            
-            VStackOne()
-        }
-    }
-}
-
 
