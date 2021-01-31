@@ -28,7 +28,7 @@ struct HStackOne: View {
             
             Text(isItemPicked ? "\(itemName)" : "")
                 .frame(width: 240, height: 40)
-                .background(Color.yellow)
+                //.background(Color.yellow)
         }
     }
 }
@@ -41,22 +41,22 @@ struct HStackTwo: View {
     var body: some View {
         HStack {
             Text(isItemPicked ? "1 мп:" : "")
-                .background(Color.orange)
+                //.background(Color.orange)
             
             Text(isItemPicked ? "кг:" : "")
-                .background(Color.green)
+                //.background(Color.green)
             
             Text(isItemPicked ? "\(itemKilo)" : "")
-                .background(Color.orange)
+                //.background(Color.orange)
             
             Text(isItemPicked ? "m2" : "")
-                .background(Color.green)
+                //.background(Color.green)
             
             Text(isItemPicked ? "\(itemMeter2)" : "")
-                .background(Color.orange)
+                //.background(Color.orange)
         }
         .frame(width: 240, height: 40)
-        .background(Color.blue)
+        //.background(Color.blue)
     }
 }
 
@@ -69,13 +69,13 @@ struct HStackThree: View {
         HStack {
             Text(isItemPicked ? "\(itemGost)" : "")
                 .frame(width: 80, height: 40)
-                .background(Color.orange)
+                //.background(Color.orange)
             
             Text(isItemPicked ? "\(itemCertificate)" : "")
                 .frame(width: 160, height: 40, alignment: .leading)
-                .background(Color.green)
+                //.background(Color.green)
         }
-        .background(Color.gray)
+        //.background(Color.gray)
     }
 }
 
@@ -102,7 +102,7 @@ struct HStackFour: View {
         HStack {
             Image(systemName: isItemPicked ? "doc.on.doc" : "xmark.bin.circle.fill")
                 .frame(width: 80, height: 80,alignment: .center)
-                .background(Color.pink)
+                //.background(Color.pink)
             
             VStackOne()
         }

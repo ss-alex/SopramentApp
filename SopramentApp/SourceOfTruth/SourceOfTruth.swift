@@ -49,32 +49,25 @@ class SourceOfTruth: ObservableObject {
     @Published var isCalcualtorPopupShown = false
     @Published var quantityValue: Double = 0.0
     @Published var kilogramValue: Double = 0.0
-    @Published var isCalculationInitiated = false
-    @Published var isQuantityValuePassed = false
     
-    func makeCalculations() {
-        if isCalculationInitiated {
-            if isQuantityValuePassed == true {
-                mtValue = quantityValue
-                kgValue = mtValue * itemKilo
-                m2Value = mtValue * itemMeter2
-                
-                print("SourceOfTruth. isQuantityValuePassed -> true ")
-                print("SourceOfTruth. mtValue = \(mtValue)")
-                print("SourceOfTruth. kgValue = \(kgValue)")
-                print("SourceOfTruth. m2Value = \(m2Value)")
-            } else {
-                kgValue = kilogramValue
-                mtValue = kgValue / itemKilo
-                m2Value = mtValue * itemMeter2
-                
-                print("SourceOfTruth. isQuantityValuePassed -> false ")
-                print("SourceOfTruth. mtValue = \(mtValue)")
-                print("SourceOfTruth. kgValue = \(kgValue)")
-                print("SourceOfTruth. m2Value = \(m2Value)")
-            }
-        }
-    }
+    //MARK:- CalculatedView. Prise calculations:
+    @Published var isCalculationDone = false /// to show the 'prise', 'save' and 'print' buttons
+    @Published var isToShowPrisePopup = false /// to show PrisePopup
+    
+    @Published var isMtInputDone = false
+    @Published var priseInputMt: Double = 0.0
+    @Published var recalculatedMt: Double = 0.0
+    
+    @Published var isKgInputDone = false
+    @Published var priseInputKg: Double = 0.0
+    @Published var recalculatedKg: Double = 0.0
+    
+    @Published var isM2InputDone = false
+    @Published var priseInputM2: Double = 0.0
+    @Published var recalculatedM2: Double = 0.0
+    
+    
+    @Published var isPriseInputDone = false /// modificator for populating prise calculaton rows
     
     func makeCalculation(with inputType: InputType) {
         switch inputType {
@@ -98,8 +91,6 @@ class SourceOfTruth: ObservableObject {
             print("SourceOfTruth. kgValue = \(kgValue)")
             print("SourceOfTruth. m2Value = \(m2Value)")
         }
-        
-        
     }
     
     func setPicture() -> Image {
@@ -174,3 +165,7 @@ class SourceOfTruth: ObservableObject {
     }
 }
 
+
+//@Published var priseInputMtValue: Double = 0.0
+//@Published var priseInputKgValue: Double = 0.0
+//@Published var priseInputM2Value: Double = 0.0

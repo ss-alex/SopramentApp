@@ -85,6 +85,7 @@ struct MaterialButtonViewA: View {
                             CategoryRow(category: material)
                         }
                     }
+                    
                 }
                 
                 Button {
@@ -96,6 +97,7 @@ struct MaterialButtonViewA: View {
                 }
 
             }
+            
         }
         .background(Color.white)
         .frame(width: 300, height: 500, alignment: .center)

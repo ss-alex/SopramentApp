@@ -24,6 +24,52 @@ struct ContentView: View {
                     ItemImagePlusCalculatorView()
                     Spacer()
                     
+                    if truth.isCalculationDone == true {
+                        HStack {
+                            
+                            Button {
+                                print("ContentView. PRiSE button was tapped.")
+                                truth.isToShowPrisePopup = true
+                            } label : {
+                                Text("PRiSE")
+                                    .font(.title3)
+                                    .fontWeight(.regular)
+                                    .frame(width: 120, height: 30)
+                                    .foregroundColor(.red)
+                                    .background(Color.black)
+                                    .cornerRadius(8)
+                            }
+                            
+                            Button {
+                                print("ContentView. SAVE button was tapped.")
+                            } label : {
+                                Text("SAVE")
+                                    .font(.title3)
+                                    .fontWeight(.regular)
+                                    .frame(width: 120, height: 30)
+                                    //.foregroundColor(truth.isCalculationDone ? .green : .white)
+                                    .foregroundColor(.green)
+                                    //.background(truth.isCalculationDone ? Color.black : Color.white)
+                                    .background(Color.black)
+                                    .cornerRadius(8)
+                            }
+                            
+                            Button {
+                                print("ContentView. PRiNT button was tapped.")
+                            } label : {
+                                Text("PRiNT")
+                                    .font(.title3)
+                                    .fontWeight(.regular)
+                                    .frame(width: 120, height: 30)
+                                    //.foregroundColor(truth.isCalculationDone ? .gray : .white)
+                                    .foregroundColor(.gray)
+                                    //.background(truth.isCalculationDone ? Color.black : Color.white)
+                                    .background(Color.black)
+                                    .cornerRadius(8)
+                            }
+                        }
+                    }
+                    
                     VStack(spacing: 0) {
                         
                         HStack(spacing: 20) {
@@ -50,7 +96,7 @@ struct ContentView: View {
                         }
                         .padding(20)
                     }
-                    .background(Color.yellow)
+                    //.background(Color.yellow)
                     .padding()
                     
                 }
@@ -76,6 +122,10 @@ struct ContentView: View {
             
             if truth.isCalcualtorPopupShown {
                 CalculatorPopup()
+            }
+
+            if truth.isToShowPrisePopup {
+                PrisePopup()
             }
         }
     }

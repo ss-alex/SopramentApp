@@ -38,12 +38,12 @@ struct ImageVStack: View {
             VStack {
                 Spacer()
                     .frame(width: 100, height: 40)
-                    .background(Color(.green))
+                    //.background(Color(.green))
                 
                 truth.setPicture()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 100, height: 160)
-                    .background(Color(.gray))
+                    //.background(Color(.gray))
                     .onTapGesture {
                         print("BlockTwoVStackOne. MaterialSpecsPopupView called on tap gesture.")
                         
@@ -56,7 +56,7 @@ struct ImageVStack: View {
                 
                 Spacer()
                     .frame(width: 100, height: 40)
-                    .background(Color(.green))
+                    //.background(Color(.green))
             }
         }
         
@@ -74,20 +74,20 @@ struct CalculatorVStack: View {
             CalculatorOutputRow(firstElement: truth.isItemPicked ? "\(truth.itemMt)" : "",
                              secondElement: truth.isItemPicked ? "\(truth.mtValue)" : "")
             
-            OtherCalculationsOutputRow(inputNumber: 0,
-                                  calculatedNumber: 0)
+            PriseOutputRow(inputNumber: truth.isMtInputDone ? "\(truth.priseInputMt)" : "",
+                           calculatedNumber: truth.isMtInputDone ? "\(truth.recalculatedMt)" : "")
             
             CalculatorOutputRow(firstElement: truth.isItemPicked ? "\(truth.itemKg)" : "",
                              secondElement: truth.isItemPicked ? "\(truth.kgValue)" : "")
             
-            OtherCalculationsOutputRow(inputNumber: 0,
-                                  calculatedNumber: 0)
+            PriseOutputRow(inputNumber: truth.isKgInputDone ? "\(truth.priseInputKg)" : "",
+                           calculatedNumber: truth.isKgInputDone ? "\(truth.recalculatedKg)" : "")
             
-            CalculatorOutputRow(firstElement: truth.isItemPicked ? "\(truth.itemMeter2)" : "",
+            CalculatorOutputRow(firstElement: truth.isItemPicked ? "\(truth.itemM2)" : "",
                              secondElement: truth.isItemPicked ? "\(truth.m2Value)" : "")
             
-            OtherCalculationsOutputRow(inputNumber: 0,
-                                  calculatedNumber: 0)
+            PriseOutputRow(inputNumber: truth.isM2InputDone ? "\(truth.priseInputM2)" : "",
+                           calculatedNumber: truth.isM2InputDone ? "\(truth.recalculatedM2)" : "")
         }
         .onTapGesture {
             truth.isCalcualtorPopupShown = true
@@ -104,26 +104,28 @@ struct CalculatorOutputRow: View {
         HStack(spacing: 0) {
             Text(firstElement)
                 .frame(width: 80, height: 40, alignment: .leading)
-                .background(Color(.orange))
+                //.background(Color(.orange))
             Text(secondElement)
                 .frame(width: 200, height: 40, alignment: .center)
-                .background(Color(.blue))
+                //.background(Color(.blue))
         }
     }
 }
 
-struct OtherCalculationsOutputRow: View {
-    var inputNumber: Int
-    var calculatedNumber: Int
+struct PriseOutputRow: View {
+    var inputNumber: String
+    var calculatedNumber: String
     
     var body: some View {
         HStack(spacing: 0) {
-            Text("\(inputNumber)")
+            Text(inputNumber)
                 .frame(width: 80, height: 40, alignment: .leading)
-                .background(Color(.systemOrange))
-            Text("\(calculatedNumber)")
+                .foregroundColor(.orange)
+                //.background(Color(.systemOrange))
+            Text(calculatedNumber)
                 .frame(width: 200, height: 40, alignment: .center)
-                .background(Color(.systemBlue))
+                .foregroundColor(.blue)
+                //.background(Color(.systemBlue))
         }
     }
 }
