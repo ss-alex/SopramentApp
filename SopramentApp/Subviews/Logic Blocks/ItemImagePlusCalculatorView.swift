@@ -12,20 +12,19 @@ struct ItemImagePlusCalculatorView: View {
     
     var body: some View {
         HStack(spacing:30) {
-            ImageVStack(tableNameString: truth.materialTableName)
+            ItemImageView(tableNameString: truth.materialTableName)
             CalculatorVStack()
         }
         .frame(width: 380, height: 240)
     }
 }
 
-struct ImageVStack: View {
+struct ItemImageView: View {
     
     var tableString: String
     var model: DataModel
-    @EnvironmentObject var truth: SourceOfTruth
     
-    @State var isImageTapped = false
+    @EnvironmentObject var truth: SourceOfTruth
     
     init(tableNameString: String) {
         self.tableString = tableNameString
@@ -33,30 +32,16 @@ struct ImageVStack: View {
     }
     
     var body: some View {
-        
-        ZStack {
-            VStack {
-                Spacer()
-                    .frame(width: 100, height: 40)
-                    //.background(Color(.green))
-                
-                truth.setPicture()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 100, height: 160)
-                    //.background(Color(.gray))
-                    .onTapGesture {
-                        print("BlockTwoVStackOne. MaterialSpecsPopupView called on tap gesture.")
-                        truth.isImageTapped = true
-                        model.setupDB()
-                        truth.itemsNameArray = model.listItemsName()
-                        print("BlockTwoVStackOne. truth.materialsNameArray = \(truth.itemsNameArray)")
-                    }
-                
-                Spacer()
-                    .frame(width: 100, height: 40)
-                    //.background(Color(.green))
-            }
+        if truth.isMaterialPictureShown == true {
+            truth.setPicture()
+                .resizable()
+                .frame(width: 100, height: 160)
+                .onTapGesture {
+                    truth.isImageTapped = true
+                    truth.fetchItemNamesArray(model: model)
+                }
         }
+        
         
         if truth.isImageTapped {
             PopupViewTwo(model: model)
@@ -128,3 +113,41 @@ struct PriseOutputRow: View {
     }
 }
 
+
+/*ZStack {
+    VStack {
+        Spacer()
+            .frame(width: 100, height: 40)
+            .background(Color(.green))
+        
+        if truth.isMaterialPictureShown == true {
+            truth.setPicture()
+                .resizable()
+                .frame(width: 100, height: 160)
+                //.background(Color(.gray))
+                .onTapGesture {
+                    print("BlockTwoVStackOne. MaterialSpecsPopupView called on tap gesture.")
+                    truth.isImageTapped = true
+                    model.setupDB()
+                    truth.itemsNameArray = model.listItemsName()
+                    print("BlockTwoVStackOne. truth.materialsNameArray = \(truth.itemsNameArray)")
+                }
+        }
+        
+        /*truth.setPicture()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: 100, height: 160)
+            //.background(Color(.gray))
+            .onTapGesture {
+                print("BlockTwoVStackOne. MaterialSpecsPopupView called on tap gesture.")
+                truth.isImageTapped = true
+                model.setupDB()
+                truth.itemsNameArray = model.listItemsName()
+                print("BlockTwoVStackOne. truth.materialsNameArray = \(truth.itemsNameArray)")
+            }*/
+        
+        Spacer()
+            .frame(width: 100, height: 40)
+            .background(Color(.green))
+    }
+}*/

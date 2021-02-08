@@ -14,6 +14,14 @@ struct ContentView: View {
     
     @EnvironmentObject var truth: SourceOfTruth
     
+    /*var tableString: String
+    var model: DataModel
+    
+    init(tableNameString: String) {
+        self.tableString = tableNameString
+        self.model = DataModel(tableNameString: tableString)
+    }*/
+    
     var body: some View {
         ZStack {
             NavigationView {
@@ -119,6 +127,7 @@ struct ContentView: View {
             if truth.isPopupViewOneShown {
                 PopupViewOne()
             }
+            
             
             if truth.isCalcualtorPopupShown {
                 CalculatorPopup()

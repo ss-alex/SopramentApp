@@ -25,7 +25,7 @@ class SourceOfTruth: ObservableObject {
     
     //MARK:- Table in PopupViewTwo:
     @Published var isImageTapped = false
-    @Published var itemsNameArray = [MaterialItem]()
+    @Published var itemNamesArray = [MaterialItem]()
     @Published var itemName: String = ""
     
     //MARK:- Item entities:
@@ -69,6 +69,39 @@ class SourceOfTruth: ObservableObject {
     
     @Published var isPriseInputDone = false /// modificator for populating prise calculaton rows
     
+    func fetchItemNamesArray(model: DataModel) {
+        model.setupDB()
+        itemNamesArray = model.listItemNames()
+        print("SourceOfTruth. listItemNames. itemNamesArray = \(itemNamesArray)")
+    }
+    
+    func fetchItemEntities(model: DataModel) {
+        model.setupDB()
+        let row = model.fetchItemRow(name: itemName)
+        
+        itemTitle = row![model.title]
+        itemGost = row![model.gost]
+        itemCertificate = row![model.certificate]
+        itemKilo = row![model.kilo]
+        itemMeter2 = row![model.meter]
+        itemLabel = row![model.label]
+        itemKg = row![model.kg]
+        itemMt = row![model.mt]
+        itemM2 = row![model.m2]
+        
+        //Checking what works, what doesn't:
+        print("SourceOfTruth. fetchItemEntities. model.fetchItemRow(). row = \(row)")
+        print("SourceOfTruth. fetchItemEntities. itemTitle = \(itemTitle)")
+        print("SourceOfTruth. fetchItemEntities. itemGost = \(itemGost)")
+        print("SourceOfTruth. fetchItemEntities. itemCertificate = \(itemCertificate)")
+        print("SourceOfTruth. fetchItemEntities. itemKilo = \(itemKilo)")
+        print("SourceOfTruth. fetchItemEntities. itemMeter = \(itemMeter2)")
+        print("SourceOfTruth. fetchItemEntities. itemLabel = \(itemLabel)")
+        print("SourceOfTruth. fetchItemEntities. itemKg = \(itemKg)")
+        print("SourceOfTruth. fetchItemEntities. itemMt = \(itemMt)")
+        print("SourceOfTruth. fetchItemEntities. itemM2 = \(itemM2)")
+    }
+    
     func makeCalculation(with inputType: InputType) {
         switch inputType {
         case .quantity:
@@ -97,7 +130,8 @@ class SourceOfTruth: ObservableObject {
         switch imageName {
         case "iv_d1":
             print("SourceOfTruth. setPicture(). imageName = \(imageName).")
-            return Image(systemName: "scribble")
+            //return Image(systemName: "scribble")
+            return Image("iv_d1")
         case "iv_d2":
             print("SourceOfTruth. setPicture(). iv_d2.")
             return Image("iv_d1")
@@ -164,8 +198,3 @@ class SourceOfTruth: ObservableObject {
         }
     }
 }
-
-
-//@Published var priseInputMtValue: Double = 0.0
-//@Published var priseInputKgValue: Double = 0.0
-//@Published var priseInputM2Value: Double = 0.0

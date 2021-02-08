@@ -14,8 +14,6 @@ struct MaterialCategoryModel {
 }
 
 class DataModel {
-    //@EnvironmentObject var truth: SourceOfTruth
-    
     private var db: Connection?
     
     //MARK:- Column names:
@@ -67,7 +65,7 @@ class DataModel {
 
 extension DataModel {
     
-    func listItemsName() -> [MaterialItem]  {
+    func listItemNames() -> [MaterialItem]  {
         do {
             
             return try db!.prepare(materialTable).map { material in
