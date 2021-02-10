@@ -17,6 +17,9 @@
 		D97770672594353D00896525 /* MaterialButtonViewA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97770662594353D00896525 /* MaterialButtonViewA.swift */; };
 		D977706A2594354E00896525 /* MaterialButtonViewB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97770692594354E00896525 /* MaterialButtonViewB.swift */; };
 		D977706D2594356200896525 /* MaterialButtonViewC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D977706C2594356200896525 /* MaterialButtonViewC.swift */; };
+		D97AA36F25D260A9002BB25A /* UIKit + PDF Viewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AA36E25D260A9002BB25A /* UIKit + PDF Viewer.swift */; };
+		D97AA37425D391A8002BB25A /* PDFViewer in Frameworks */ = {isa = PBXBuildFile; productRef = D97AA37325D391A8002BB25A /* PDFViewer */; };
+		D97AA39B25D3D2EE002BB25A /* sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D97AA39A25D3D2EE002BB25A /* sample.pdf */; };
 		D991F6AC258C480800E5AB45 /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991F6AB258C480800E5AB45 /* MaterialButton.swift */; };
 		D99A8BC0258DD65700A9BA07 /* ItemDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99A8BBF258DD65700A9BA07 /* ItemDataView.swift */; };
 		D99A8BC4259052DB00A9BA07 /* ItemImagePlusCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99A8BC3259052DB00A9BA07 /* ItemImagePlusCalculatorView.swift */; };
@@ -41,6 +44,8 @@
 		D97770662594353D00896525 /* MaterialButtonViewA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButtonViewA.swift; sourceTree = "<group>"; };
 		D97770692594354E00896525 /* MaterialButtonViewB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButtonViewB.swift; sourceTree = "<group>"; };
 		D977706C2594356200896525 /* MaterialButtonViewC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButtonViewC.swift; sourceTree = "<group>"; };
+		D97AA36E25D260A9002BB25A /* UIKit + PDF Viewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit + PDF Viewer.swift"; sourceTree = "<group>"; };
+		D97AA39A25D3D2EE002BB25A /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample.pdf; sourceTree = "<group>"; };
 		D991F6AB258C480800E5AB45 /* MaterialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
 		D99A8BBF258DD65700A9BA07 /* ItemDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataView.swift; sourceTree = "<group>"; };
 		D99A8BC3259052DB00A9BA07 /* ItemImagePlusCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemImagePlusCalculatorView.swift; sourceTree = "<group>"; };
@@ -63,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D95404D225A91F660014C4DC /* SQLite in Frameworks */,
+				D97AA37425D391A8002BB25A /* PDFViewer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +108,14 @@
 				D977706C2594356200896525 /* MaterialButtonViewC.swift */,
 			);
 			path = "12 Button Views";
+			sourceTree = "<group>";
+		};
+		D97AA36D25D2605E002BB25A /* UIKit Integration */ = {
+			isa = PBXGroup;
+			children = (
+				D97AA36E25D260A9002BB25A /* UIKit + PDF Viewer.swift */,
+			);
+			path = "UIKit Integration";
 			sourceTree = "<group>";
 		};
 		D991F6AE258C63F300E5AB45 /* MainView */ = {
@@ -173,6 +187,7 @@
 		D9CB7000258A1F1600EB631F /* SopramentApp */ = {
 			isa = PBXGroup;
 			children = (
+				D97AA36D25D2605E002BB25A /* UIKit Integration */,
 				D94C9C8B25BA563200934ADD /* SourceOfTruth */,
 				D95404CF25A880160014C4DC /* Database */,
 				D991F6AE258C63F300E5AB45 /* MainView */,
@@ -180,6 +195,7 @@
 				D9CB7001258A1F1600EB631F /* SopramentAppApp.swift */,
 				D9CB7005258A1F1B00EB631F /* Assets.xcassets */,
 				D9CB700A258A1F1B00EB631F /* Info.plist */,
+				D97AA39A25D3D2EE002BB25A /* sample.pdf */,
 				D971181125AEBAE7006C70B2 /* assortment-V2.sqlite */,
 				D9CB7007258A1F1B00EB631F /* Preview Content */,
 			);
@@ -212,6 +228,7 @@
 			name = SopramentApp;
 			packageProductDependencies = (
 				D95404D125A91F660014C4DC /* SQLite */,
+				D97AA37325D391A8002BB25A /* PDFViewer */,
 			);
 			productName = SopramentApp;
 			productReference = D9CB6FFE258A1F1600EB631F /* SopramentApp.app */;
@@ -242,6 +259,7 @@
 			mainGroup = D9CB6FF5258A1F1600EB631F;
 			packageReferences = (
 				D95404D025A91F660014C4DC /* XCRemoteSwiftPackageReference "SQLite" */,
+				D97AA37225D391A8002BB25A /* XCRemoteSwiftPackageReference "PDFViewer" */,
 			);
 			productRefGroup = D9CB6FFF258A1F1600EB631F /* Products */;
 			projectDirPath = "";
@@ -257,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D97AA39B25D3D2EE002BB25A /* sample.pdf in Resources */,
 				D9CB7009258A1F1B00EB631F /* Preview Assets.xcassets in Resources */,
 				D9CB7006258A1F1B00EB631F /* Assets.xcassets in Resources */,
 				D971181225AEBAE7006C70B2 /* assortment-V2.sqlite in Resources */,
@@ -285,6 +304,7 @@
 				D977706A2594354E00896525 /* MaterialButtonViewB.swift in Sources */,
 				D95404C425A7EC380014C4DC /* SourceOfTruth.swift in Sources */,
 				D9F89B7225C1ABCC00797CBA /* CalculatorPopup.swift in Sources */,
+				D97AA36F25D260A9002BB25A /* UIKit + PDF Viewer.swift in Sources */,
 				D99A8BC82591BB5B00A9BA07 /* RemarksView.swift in Sources */,
 				D991F6AC258C480800E5AB45 /* MaterialButton.swift in Sources */,
 				D99A8BD3259210DD00A9BA07 /* RemarksButton.swift in Sources */,
@@ -486,6 +506,14 @@
 				minimumVersion = 0.12.2;
 			};
 		};
+		D97AA37225D391A8002BB25A /* XCRemoteSwiftPackageReference "PDFViewer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rajubd49/PDFViewer.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -493,6 +521,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D95404D025A91F660014C4DC /* XCRemoteSwiftPackageReference "SQLite" */;
 			productName = SQLite;
+		};
+		D97AA37325D391A8002BB25A /* PDFViewer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D97AA37225D391A8002BB25A /* XCRemoteSwiftPackageReference "PDFViewer" */;
+			productName = PDFViewer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

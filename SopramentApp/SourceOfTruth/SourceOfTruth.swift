@@ -25,6 +25,7 @@ class SourceOfTruth: ObservableObject {
     
     //MARK:- Table in PopupViewTwo:
     @Published var isImageTapped = false
+    //@Published var areMaterialButtonsHidden = false
     @Published var itemNamesArray = [MaterialItem]()
     @Published var itemName: String = ""
     
@@ -66,7 +67,6 @@ class SourceOfTruth: ObservableObject {
     @Published var priseInputM2: Double = 0.0
     @Published var recalculatedM2: Double = 0.0
     
-    
     @Published var isPriseInputDone = false /// modificator for populating prise calculaton rows
     
     func fetchItemNamesArray(model: DataModel) {
@@ -76,6 +76,7 @@ class SourceOfTruth: ObservableObject {
     }
     
     func fetchItemEntities(model: DataModel) {
+        
         model.setupDB()
         let row = model.fetchItemRow(name: itemName)
         

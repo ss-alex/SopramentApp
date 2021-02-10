@@ -6,13 +6,8 @@
 //
 
 import SwiftUI
-
-/*extension Double {
-    func round(to places: Int) -> Double {
-        let divisor = pow(10.0, Double(places))
-        return (self * divisor).rounded() / divisor
-    }
-}*/
+//import PDFViewer
+import WebKit
 
 extension Double {
     var roundedInTwo:String {
@@ -73,21 +68,54 @@ struct HStackTwo: View {
 }
 
 struct HStackThree: View {
+   
+    
     var isItemPicked: Bool
     var itemGost: String
     var itemCertificate: String
     
+    @State private var viewLocalPDF = false
+    let pdfName = "sample"
+    
     var body: some View {
         HStack(spacing: 0) {
-            Text(isItemPicked ? "\(itemGost)" : "")
-                .frame(width: 80, height: 40)
-                //.background(Color.orange)
+            
+            NavigationLink(destination: PDFView(), isActive: $viewLocalPDF) {
+                Text(isItemPicked ? "\(itemGost)" : "")
+                    .frame(width: 80, height: 40)
+                    .onTapGesture {
+                        viewLocalPDF = true
+                    }
+                    //.background(Color.orange)
+            }
             
             Text(isItemPicked ? "\(itemCertificate)" : "")
                 .frame(width: 160, height: 40, alignment: .leading)
-                //.background(Color.green)
         }
-        //.background(Color.gray)
+    }
+    
+    func PDFView() -> WebView {
+        return WebView(request: openPDF())
+    }
+    
+    func openPDF() -> URLRequest {
+        let path = Bundle.main.path(forResource: "sample", ofType: "pdf")
+        let url = URL(fileURLWithPath: path!)
+        return URLRequest(url: url)
+    }
+    
+}
+
+struct WebView: UIViewRepresentable {
+    let request: URLRequest
+    
+    func makeUIView(context: Context) -> WKWebView {
+        return WKWebView()
+    }
+    
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        uiView.load(request)
     }
 }
+
 

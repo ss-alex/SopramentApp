@@ -26,7 +26,8 @@ struct PopupViewTwo: View {
                 ItemRow(item: item, model: model)
             }
         }
-        .frame(width: 300, height: 500)
+        .background(Color.white)
+        .frame(width: 300, height: 400)
     }
 }
 
@@ -42,6 +43,7 @@ struct ItemRow: View {
                 truth.itemName = item.name
                 truth.fetchItemEntities(model: model)
                 truth.isImageTapped = false
+                //truth.areMaterialButtonsHidden = false
                 truth.isItemPicked = true
             }
     }

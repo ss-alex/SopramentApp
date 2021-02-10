@@ -11,7 +11,7 @@ struct ItemImagePlusCalculatorView: View {
     @EnvironmentObject var truth: SourceOfTruth
     
     var body: some View {
-        HStack(spacing:30) {
+        HStack() {
             ItemImageView(tableNameString: truth.materialTableName)
             CalculatorVStack()
         }
@@ -38,6 +38,7 @@ struct ItemImageView: View {
                 .frame(width: 100, height: 160)
                 .onTapGesture {
                     truth.isImageTapped = true
+                    //truth.areMaterialButtonsHidden = true
                     truth.fetchItemNamesArray(model: model)
                 }
         }
